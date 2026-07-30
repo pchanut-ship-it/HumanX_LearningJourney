@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanX House Learning Journey</title>
+    
+    <!-- Google Fonts: Noto Serif Thai for elegant headings, Prompt for readable body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jade: {
+                            50: '#f0f9f4',
+                            100: '#dbf0e3',
+                            500: '#34a853',
+                            700: '#1e6b36',
+                            800: '#165028',
+                            900: '#0e361a',
+                        },
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        },
+                        crimson: {
+                            700: '#be123c',
+                            800: '#9f1239',
+                        },
+                        sand: {
+                            50: '#faf9f6',
+                            100: '#f5f5dc',
+                            200: '#e8e5c8',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Noto Serif Thai"', 'serif'],
+                        body: ['"Prompt"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/rice-paper-2.png')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styling for smoother transitions and aesthetic touches */
+        body {
+            background-color: #faf9f6;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+        }
+        .asian-border {
+            border: 2px solid #ca8a04;
+            position: relative;
+        }
+        .asian-border::before, .asian-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #ca8a04;
+        }
+        .asian-border::before { top: -6px; left: -6px; border-right: none; border-bottom: none; }
+        .asian-border::after { bottom: -6px; right: -6px; border-left: none; border-top: none; }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="font-body text-gray-800 antialiased overflow-x-hidden">
+
+    <header class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Asian students collaborating" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-jade-900/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-sand-50"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in-up">
+            <div class="inline-block mb-6">
+                <span class="asian-border inline-block px-4 py-2 text-gold-400 font-heading tracking-widest text-sm md:text-base uppercase">
+                    เส้นทางการเรียนรู้
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold font-heading text-sand-50 mb-6 drop-shadow-lg leading-tight">
+                HumanX House <br> <span class="text-gold-500">Learning Journey</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-sand-100/90 font-light max-w-3xl mx-auto mb-10">
+                เปิดประตูสู่บ้านแห่งการเรียนรู้ แบ่งกระบวนการเติบโตออกเป็น 6 ช่วงเวลา เพื่อพัฒนาทักษะ ค้นพบตนเอง และสร้างสรรค์สิ่งดีๆ สู่สังคม
+            </p>
+            <a href="#stage-1" class="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-gold-900/20">
+                เริ่มต้นการเดินทาง <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="stage-1" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 relative group">
+                    <div class="absolute -inset-4 bg-jade-100 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-1"></div>
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop" alt="Asian community welcoming" class="relative z-10 rounded-2xl shadow-xl w-full h-[400px] object-cover grayscale-[20%] sepia-[10%] group-hover:grayscale-0 transition-all duration-500">
+                    <!-- Stage Badge -->
+                    <div class="absolute -top-6 -left-6 w-20 h-20 bg-crimson-700 rounded-full flex flex-col items-center justify-center text-white shadow-lg z-20 border-4 border-sand-50">
+                        <span class="text-sm font-bold opacity-80">STAGE</span>
+                        <span class="text-2xl font-heading font-bold leading-none">1</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="text-jade-700 mb-4"><i class="fa-solid fa-door-open text-3xl"></i></div>
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold text-jade-900 mb-6">Welcome Home</h2>
+                    <h3 class="text-xl text-gold-600 font-semibold mb-4">เปิดบ้าน สร้างความเป็นสมาชิก</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        เป้าหมายคือทำให้ผู้เข้าร่วมรู้สึกว่าไม่ได้มา “เข้าอบรม” แต่เข้ามาเป็นสมาชิกของชุมชนที่พร้อมสนับสนุนกัน
+                    </p>
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-jade-500 shadow-sm">
+                        <h4 class="font-bold text-jade-800 mb-2">ผลลัพธ์สำคัญ:</h4>
+                        <p class="italic text-gray-700">"ที่นี่เป็นพื้นที่ปลอดภัยที่ฉันสามารถทดลอง ผิดพลาด และเติบโตได้"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage-2" class="py-24 px-6 bg-jade-900 text-sand-50 relative overflow-hidden">
+        <!-- Decorative Pattern -->
+        <div class="absolute top-0 right-0 opacity-5 pointer-events-none">
+            <svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" fill="none"/>
+                <circle cx="50" cy="50" r="30" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute -top-6 -right-6 w-20 h-20 bg-gold-500 rounded-full flex flex-col items-center justify-center text-jade-900 shadow-lg z-20 border-4 border-jade-900">
+                        <span class="text-sm font-bold opacity-80">STAGE</span>
+                        <span class="text-2xl font-heading font-bold leading-none">2</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1964&auto=format&fit=crop" alt="Asian woman reflecting" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover opacity-90 border-2 border-jade-700">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="text-gold-400 mb-4"><i class="fa-solid fa-compass text-3xl"></i></div>
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Discover Yourself</h2>
+                    <h3 class="text-xl text-jade-400 font-semibold mb-6">รู้จักตนเองและกำหนดเป้าหมายการเติบโต</h3>
+                    <p class="text-sand-100/80 text-lg leading-relaxed mb-6">
+                        ก่อนพัฒนาทักษะ ผู้เข้าร่วมควรรู้ว่าตนเองมีจุดแข็ง ช่องว่าง และเป้าหมายอะไร โดยแต่ละคนเลือกสมรรถนะเป้าหมาย 2–3 ด้าน เช่น:
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span>ต้องการกล้าสื่อสารมากขึ้น</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span>ต้องการจัดการอารมณ์เมื่อทำงานเป็นทีม</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span>ต้องการใช้ AI อย่างมีวิจารณญาณ</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-400 mt-1"></i> <span>ต้องการพัฒนาความเป็นผู้นำ & มีส่วนร่วมแก้ปัญหาสังคม</span></li>
+                    </ul>
+                    <div class="inline-block bg-jade-800 border border-jade-700 py-3 px-6 rounded-lg text-gold-400 font-semibold shadow-inner">
+                        <i class="fa-solid fa-book-open mr-2"></i> ผลผลิต: HumanX Growth Passport (สมุดบันทึกเส้นทางการเติบโต)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage-3" class="py-24 px-6 relative bg-sand-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 relative">
+                <div class="absolute left-1/2 -translate-x-1/2 -top-12 w-20 h-20 bg-jade-700 rounded-full flex flex-col items-center justify-center text-white shadow-lg border-4 border-sand-50">
+                    <span class="text-sm font-bold opacity-80">STAGE</span>
+                    <span class="text-2xl font-heading font-bold leading-none">3</span>
+                </div>
+                <div class="text-jade-600 mb-2 mt-8"><i class="fa-solid fa-vihara text-3xl"></i></div>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-jade-900 mb-4">Build the Foundations</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">สร้างพื้นฐานผ่าน 4 Skill Studios ในรูปแบบห้องทดลองทักษะ</p>
+                <p class="text-sm text-gray-500 mt-2 max-w-3xl mx-auto">ประกอบด้วย: สถานการณ์กระตุ้นความคิด > แนวคิดสั้นๆ > ฝึกปฏิบัติ > Feedback > Reflection</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Studio 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-jade-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-jade-100 flex items-center justify-center text-jade-700 text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-jade-900">Studio 1: Think Forward Lab</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-gold-500"></i> วิเคราะห์ข่าวจริงและข่าวลวง</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-gold-500"></i> Evidence Challenge (แยกข้อเท็จจริง ความคิดเห็น ข้อสันนิษฐาน)</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-gold-500"></i> AI Fact-Checking Mission</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-gold-500"></i> Creative Problem-Solving Sprint</li>
+                    </ul>
+                </div>
+
+                <!-- Studio 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-gold-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center text-gold-600 text-xl">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-jade-900">Studio 2: Work Forward Lab</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-jade-500"></i> Communication Challenge (อธิบายเรื่องยากใน 3 นาที)</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-jade-500"></i> การฟังอย่างตั้งใจและการตั้งคำถาม</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-jade-500"></i> Team Simulation & Conflict Management</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-jade-500"></i> Pitching for Change & Leadership Rotation</li>
+                    </ul>
+                </div>
+
+                <!-- Studio 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-crimson-600 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-crimson-700 text-xl">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-jade-900">Studio 3: Grow Forward Lab</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-crimson-500"></i> Personal Energy Audit & Habit Design</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-crimson-500"></i> Emotional Trigger Mapping</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-crimson-500"></i> Feedback without Defensiveness</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-crimson-500"></i> Learning Agility & Future Shock Simulation</li>
+                    </ul>
+                </div>
+
+                <!-- Studio 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-blue-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xl">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-jade-900">Studio 4: Live Forward Lab</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-blue-500"></i> สำรวจปัญหาชุมชน & Stakeholder Mapping</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-blue-500"></i> Sustainability Decision Game</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-blue-500"></i> Privilege and Empathy Walk</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-dot text-[10px] mt-1.5 text-blue-500"></i> Global–Local Challenge & Service Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage-4" class="py-24 px-6 relative bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-16">
+                <div class="w-20 h-20 bg-gold-500 rounded-full flex flex-col items-center justify-center text-jade-900 shadow-lg border-4 border-white mb-6">
+                    <span class="text-sm font-bold opacity-80">STAGE</span>
+                    <span class="text-2xl font-heading font-bold leading-none">4</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold text-jade-900 mb-4">House Missions</h2>
+                <h3 class="text-xl text-jade-600 font-semibold">ฝึกทักษะผ่านภารกิจประจำบ้าน</h3>
+                <p class="mt-4 text-gray-600 max-w-2xl">หลัง Skill Studio สมาชิกต้องนำทักษะไปใช้ผ่านภารกิจ 3 ระดับ พร้อมคำถามสำคัญ: <br><span class="font-bold text-crimson-700">"ใครได้รับประโยชน์ และเรารู้ได้อย่างไรว่าสิ่งที่ทำสร้างคุณค่าจริง"</span></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Level 1 -->
+                <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-md border border-sand-200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Personal Mission">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-wider text-jade-600 uppercase mb-2 block">Level 1</span>
+                        <h4 class="text-xl font-bold text-jade-900 mb-4">Personal Mission</h4>
+                        <p class="text-sm text-gray-600 mb-4 border-b border-gray-200 pb-4">ภารกิจพัฒนาตนเอง</p>
+                        <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4 marker:text-gold-500">
+                            <li>ทดลองสร้างนิสัยใหม่ 14 วัน</li>
+                            <li>ใช้ AI ช่วยเรียน/ทำงาน พร้อมบันทึกข้อดี-ข้อจำกัด</li>
+                            <li>ฝึกการฟังโดยไม่ขัดจังหวะ</li>
+                            <li>ขอ Feedback จากคน 3 คนเพื่อจัดทำแผนพัฒนา</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-md border border-sand-200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Team Mission">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-wider text-gold-600 uppercase mb-2 block">Level 2</span>
+                        <h4 class="text-xl font-bold text-jade-900 mb-4">Team Mission</h4>
+                        <p class="text-sm text-gray-600 mb-4 border-b border-gray-200 pb-4">ภารกิจที่ต้องทำร่วมกับผู้อื่น</p>
+                        <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4 marker:text-jade-500">
+                            <li>จัดกิจกรรมแก้ปัญหาเล็กๆ ในมหาวิทยาลัย</li>
+                            <li>สร้างสื่อรณรงค์จากข้อมูลที่ตรวจสอบได้</li>
+                            <li>พัฒนาแนวคิดธุรกิจเพื่อสังคม</li>
+                            <li>ออกแบบบริการช่วยยกระดับคุณภาพชีวิต</li>
+                            <li>จัดเวทีพูดคุยประเด็นความเห็นต่าง</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="bg-sand-50 rounded-2xl overflow-hidden shadow-md border border-sand-200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074&auto=format&fit=crop" class="w-full h-full object-cover" alt="Social Mission">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold tracking-wider text-crimson-700 uppercase mb-2 block">Level 3</span>
+                        <h4 class="text-xl font-bold text-jade-900 mb-4">Social Mission</h4>
+                        <p class="text-sm text-gray-600 mb-4 border-b border-gray-200 pb-4">ภารกิจที่สร้างผลกระทบต่อชุมชน</p>
+                        <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4 marker:text-crimson-500">
+                            <li>ลดขยะในมหาวิทยาลัย</li>
+                            <li>ช่วยผู้สูงอายุใช้เทคโนโลยี</li>
+                            <li>ส่งเสริมสุขภาวะทางใจของนิสิต</li>
+                            <li>พัฒนาการเรียนรู้ให้เด็กในชุมชน</li>
+                            <li>ออกแบบนวัตกรรมเพื่อชุมชน/สิ่งแวดล้อม</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage-5" class="py-24 px-6 relative bg-jade-900 text-white overflow-hidden">
+        <!-- Bamboo background overlay -->
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=1974&auto=format&fit=crop" alt="Texture" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="w-full md:w-1/3">
+                    <div class="w-20 h-20 bg-crimson-700 rounded-full flex flex-col items-center justify-center text-white shadow-lg border-4 border-jade-900 mb-8">
+                        <span class="text-sm font-bold opacity-80">STAGE</span>
+                        <span class="text-2xl font-heading font-bold leading-none">5</span>
+                    </div>
+                    <h2 class="text-4xl font-heading font-bold mb-4">Thailand <br><span class="text-gold-400">Challenge</span></h2>
+                    <p class="text-sand-100/80 mb-6 text-lg">โครงการจริงเพื่ออนาคตประเทศไทย (Capstone Project)</p>
+                    <p class="text-sm text-jade-100 font-light mb-6">
+                        สมาชิกเลือกปัญหาจริงที่เกี่ยวข้องกับอนาคตประเทศ โดยแต่ละทีมจะมี Mentor จากมหาวิทยาลัย ภาคธุรกิจ ภาครัฐ หรือภาคประชาสังคม ช่วยเชื่อมการเรียนรู้กับโลกจริง
+                    </p>
+                    <div class="bg-jade-800 p-4 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="font-bold text-gold-400 mb-2 text-sm">ตัวอย่างโจทย์:</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-2 py-1 bg-jade-900 rounded">ทักษะดิจิทัล</span>
+                            <span class="px-2 py-1 bg-jade-900 rounded">สังคมผู้สูงอายุ</span>
+                            <span class="px-2 py-1 bg-jade-900 rounded">ปัญหาสิ่งแวดล้อม</span>
+                            <span class="px-2 py-1 bg-jade-900 rounded">การใช้ AI อย่างรับผิดชอบ</span>
+                            <span class="px-2 py-1 bg-jade-900 rounded">ความเหลื่อมล้ำทางการศึกษา</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-2xl font-heading mb-8 text-center md:text-left border-b border-jade-700 pb-4">กระบวนการดำเนินงาน (Design Process)</h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Process Steps -->
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <h4 class="font-bold mb-1">1. Explore</h4>
+                            <p class="text-xs text-jade-100/70">สำรวจปัญหาและลงพื้นที่</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-heart"></i></span>
+                            <h4 class="font-bold mb-1">2. Empathize</h4>
+                            <p class="text-xs text-jade-100/70">ทำความเข้าใจผู้เกี่ยวข้อง</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-crosshairs"></i></span>
+                            <h4 class="font-bold mb-1">3. Define</h4>
+                            <p class="text-xs text-jade-100/70">กำหนดปัญหาจากหลักฐาน</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-lightbulb"></i></span>
+                            <h4 class="font-bold mb-1">4. Ideate</h4>
+                            <p class="text-xs text-jade-100/70">สร้างแนวคิดหลายทางเลือก</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-cubes"></i></span>
+                            <h4 class="font-bold mb-1">5. Prototype</h4>
+                            <p class="text-xs text-jade-100/70">ทำต้นแบบ</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-vial"></i></span>
+                            <h4 class="font-bold mb-1">6. Test</h4>
+                            <p class="text-xs text-jade-100/70">ทดลองกับผู้ใช้จริง</p>
+                        </div>
+                        <div class="bg-jade-800/50 p-4 rounded-xl border border-jade-700 hover:bg-jade-700 transition">
+                            <span class="text-gold-400 text-xl block mb-2"><i class="fa-solid fa-wrench"></i></span>
+                            <h4 class="font-bold mb-1">7. Improve</h4>
+                            <p class="text-xs text-jade-100/70">ปรับปรุงจาก Feedback</p>
+                        </div>
+                        <div class="bg-gold-500 text-jade-900 p-4 rounded-xl shadow-lg transform scale-105">
+                            <span class="text-jade-900 text-xl block mb-2"><i class="fa-solid fa-rocket"></i></span>
+                            <h4 class="font-bold mb-1">8. Impact</h4>
+                            <p class="text-xs font-semibold">นำไปใช้ในขอบเขตที่ทำได้จริง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage-6" class="py-24 px-6 relative bg-sand-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex justify-center items-center mb-8">
+                <div class="w-24 h-24 bg-jade-700 rounded-full flex flex-col items-center justify-center text-white shadow-xl border-4 border-gold-500 relative">
+                    <span class="text-sm font-bold opacity-80">STAGE</span>
+                    <span class="text-3xl font-heading font-bold leading-none">6</span>
+                    <i class="fa-solid fa-award absolute -bottom-3 -right-3 text-3xl text-gold-500 bg-white rounded-full"></i>
+                </div>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-jade-900 mb-6">HumanX Showcase <br>& Homecoming</h2>
+            <p class="text-xl text-gray-600 mb-12">แสดงการเติบโต คืนคุณค่าให้บ้าน โดยแสดงหลักฐานว่าแต่ละคนเติบโตอย่างไร</p>
+
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl asian-border">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-jade-100 flex items-center justify-center text-jade-600 shrink-0"><i class="fa-solid fa-person-chalkboard"></i></div>
+                        <div>
+                            <h4 class="font-bold text-jade-900">Showcase Day & Pitching</h4>
+                            <p class="text-sm text-gray-600">นิทรรศการผลงานและ Pitching ต่อคณะกรรมการและผู้ใช้จริง</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-jade-100 flex items-center justify-center text-jade-600 shrink-0"><i class="fa-solid fa-microphone"></i></div>
+                        <div>
+                            <h4 class="font-bold text-jade-900">Growth Story</h4>
+                            <p class="text-sm text-gray-600">เล่าเรื่องการเปลี่ยนแปลงของตนเอง พร้อมรับสะท้อนพัฒนาการจาก Coach</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-600 shrink-0"><i class="fa-solid fa-medal"></i></div>
+                        <div>
+                            <h4 class="font-bold text-jade-900">Competency Badge</h4>
+                            <p class="text-sm text-gray-600">พิธีมอบ HumanX Passport หรือ Badge รับรองสมรรถนะ</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-crimson-100 flex items-center justify-center text-crimson-700 shrink-0"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                        <div>
+                            <h4 class="font-bold text-jade-900">Pay It Forward</h4>
+                            <p class="text-sm text-gray-600">ผู้จบรุ่นระบุความตั้งใจว่าจะส่งต่อสิ่งดีๆ หรือความรู้อะไรให้รุ่นต่อไป</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-jade-950 text-jade-100/60 py-12 text-center border-t border-jade-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-2xl font-heading font-bold text-sand-50 mb-2">HumanX House</h3>
+            <p class="mb-6">The Learning Journey</p>
+            <div class="flex justify-center gap-4 mb-8">
+                <div class="w-2 h-2 rounded-full bg-gold-500"></div>
+                <div class="w-2 h-2 rounded-full bg-jade-500"></div>
+                <div class="w-2 h-2 rounded-full bg-crimson-700"></div>
+            </div>
+            <p class="text-sm">&copy; 2026 HumanX House Learning Journey. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
