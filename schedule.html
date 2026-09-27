@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule - HumanX Academy (มศว × มูลนิธิสุทธิรัตน์ อยู่วิทยา)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              navy: '#0b192c',
+              slate: '#1e3e62',
+              primary: '#0052cc',
+              coral: '#ff6500',
+              gold: '#f59e0b',
+              emerald: '#059669',
+              teal: '#0d9488',
+              crimson: '#e11d48',
+              purple: '#8b5cf6',
+              dark: '#070f1a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0d1b2a 0%, #070f1a 100%);
+      color: #e2e8f0;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+    .asian-tag {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(225, 29, 72, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .timeline-track::-webkit-scrollbar {
+      height: 8px;
+    }
+    .timeline-track::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 9999px;
+    }
+    .timeline-track::-webkit-scrollbar-thumb {
+      background: #f59e0b;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(245, 158, 11, 0.5);
+      border-radius: 4px;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        color: #0f172a !important;
+      }
+      table {
+        color: #0f172a !important;
+      }
+      th {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+      }
+      td {
+        border-color: #e2e8f0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 selection:bg-brand-coral selection:text-white">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <nav class="max-w-6xl mx-auto mb-8 glass-card rounded-2xl px-5 py-3.5 border border-slate-700/60 shadow-xl sticky top-4 z-50 no-print">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+            HX
+          </div>
+          <div>
+            <div class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+              Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">X</span> Academy
+            </div>
+            <div class="text-[11px] text-slate-400">มศว × มูลนิธิสุทธิรัตน์ อยู่วิทยา</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3 Interconnected Links -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-house-chimney text-xs"></i>
+          <span>What is HumanX?</span>
+        </a>
+        <a href="journey.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-route text-xs"></i>
+          <span>Learning Journey</span>
+        </a>
+        <a href="schedule.html" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow-md shadow-amber-500/20 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-calendar-days text-xs"></i>
+          <span>Schedule</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto space-y-10">
+
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class="relative rounded-3xl p-6 sm:p-10 overflow-hidden border border-slate-700/60 bg-gradient-to-br from-slate-900 via-[#0e1d32] to-[#081324] shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-[450px] h-[450px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full asian-tag text-amber-300 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            กำหนดการดำเนินโครงการ (Graphic Learning Schedule)
+          </div>
+          <div class="flex items-center gap-2 no-print">
+            <button onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-600 flex items-center gap-1.5 shadow-sm transition">
+              <i class="fa-solid fa-print text-amber-400"></i>
+              <span>พิมพ์ตารางกำหนดการ</span>
+            </button>
+            <button onclick="downloadICS()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 text-xs font-bold shadow-md shadow-amber-500/20 flex items-center gap-1.5 transition">
+              <i class="fa-solid fa-calendar-plus"></i>
+              <span>Sync เข้า Google / iCal</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-display text-white leading-tight">
+            Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400">X</span> Learning Schedule
+          </h1>
+          <p class="text-sm sm:text-base text-slate-300 font-normal mt-2 max-w-3xl leading-relaxed">
+            ตารางกิจกรรมและขั้นตอนการเรียนรู้ของหลักสูตร HumanX Academy แบ่งออกเป็น 2 ช่วงหลัก ได้แก่ <strong>ก่อนเปิดบ้าน</strong> (รับสมัครและคัดเลือกนิสิต) และ <strong>เปิดบ้าน</strong> (Stage 1 ถึง Stage 6) พร้อมไอคอนสัญลักษณ์ประจำกิจกรรมเพื่อให้อ่านง่าย
+          </p>
+        </div>
+
+        <!-- Metric Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+          <div class="glass-card rounded-2xl p-3.5 text-center border-l-4 border-slate-500">
+            <div class="text-[11px] text-slate-400">ช่วงที่ 1</div>
+            <div class="text-lg sm:text-xl font-bold text-slate-200 font-display mt-0.5">ก่อนเปิดบ้าน</div>
+            <div class="text-[11px] text-slate-400">ก.พ. – มี.ค.</div>
+          </div>
+          <div class="glass-card rounded-2xl p-3.5 text-center border-l-4 border-emerald-500">
+            <div class="text-[11px] text-slate-400">ช่วงที่ 2</div>
+            <div class="text-lg sm:text-xl font-bold text-emerald-400 font-display mt-0.5">เปิดบ้าน (เรียนรู้)</div>
+            <div class="text-[11px] text-emerald-400/80">พ.ค. – ก.ค.</div>
+          </div>
+          <div class="glass-card rounded-2xl p-3.5 text-center border-l-4 border-blue-500">
+            <div class="text-[11px] text-slate-400">ขั้นตอนการเรียนรู้</div>
+            <div class="text-lg sm:text-xl font-bold text-blue-400 font-display mt-0.5">6 Stages</div>
+            <div class="text-[11px] text-blue-400/80">Stage 1 ถึง Stage 6</div>
+          </div>
+          <div class="glass-card rounded-2xl p-3.5 text-center border-l-4 border-amber-500">
+            <div class="text-[11px] text-slate-400">กิจกรรมทั้งหมด</div>
+            <div class="text-lg sm:text-xl font-bold text-amber-400 font-display mt-0.5">14 กิจกรรม</div>
+            <div class="text-[11px] text-amber-400/80">ตรงตามตารางทางการ</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== VISUAL TIMELINE ROADMAP WITH ICONS ==================== -->
+    <section class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/60 shadow-xl space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/60 pb-3">
+        <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-timeline text-amber-400"></i>
+          <span>แผนที่ไทม์ไลน์ภาพรวม (Master Visual Timeline & Icons)</span>
+        </h2>
+        <div class="text-xs text-slate-400 flex items-center gap-3">
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-500 inline-block"></span> ก่อนเปิดบ้าน</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> พฤษภาคม</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block"></span> มิถุนายน</span>
+          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span> กรกฎาคม</span>
+        </div>
+      </div>
+
+      <!-- Horizontal Flow Bar With Icons -->
+      <div class="overflow-x-auto timeline-track pb-2 custom-scrollbar">
+        <div class="min-w-[920px] space-y-2.5">
+          
+          <!-- Month Headers -->
+          <div class="grid grid-cols-12 gap-1.5 text-center text-xs font-bold text-slate-300">
+            <div class="col-span-2 bg-slate-800/90 rounded-xl py-1.5 border border-slate-700 text-slate-300">
+              กุมภาพันธ์ – มีนาคม
+            </div>
+            <div class="col-span-4 bg-emerald-950/40 rounded-xl py-1.5 border border-emerald-800/50 text-emerald-400">
+              พฤษภาคม (สัปดาห์ที่ 1–4)
+            </div>
+            <div class="col-span-3 bg-blue-950/40 rounded-xl py-1.5 border border-blue-800/50 text-blue-400">
+              มิถุนายน (สัปดาห์ที่ 1–4)
+            </div>
+            <div class="col-span-3 bg-amber-950/40 rounded-xl py-1.5 border border-amber-800/50 text-amber-400">
+              กรกฎาคม (สัปดาห์ที่ 1–4)
+            </div>
+          </div>
+
+          <!-- Activity Flow Track with Visual Icons -->
+          <div class="grid grid-cols-12 gap-1.5 text-center text-[10px] font-semibold text-white">
+            
+            <!-- ก่อนเปิดบ้าน -->
+            <div class="col-span-1 bg-slate-800 rounded-xl p-2 border border-slate-700 flex flex-col justify-center items-center gap-1 hover:border-slate-500 transition">
+              <i class="fa-solid fa-bullhorn text-slate-400 text-sm"></i>
+              <span class="text-[9px] text-slate-400">ก.พ. ว.1</span>
+              <span class="truncate w-full text-slate-200">รับสมัครนิสิต</span>
+            </div>
+            <div class="col-span-1 bg-slate-800 rounded-xl p-2 border border-slate-700 flex flex-col justify-center items-center gap-1 hover:border-slate-500 transition">
+              <i class="fa-solid fa-user-check text-slate-400 text-sm"></i>
+              <span class="text-[9px] text-slate-400">มี.ค. ว.2</span>
+              <span class="truncate w-full text-slate-200">คัดเลือกนิสิต</span>
+            </div>
+
+            <!-- พฤษภาคม -->
+            <div class="col-span-1 bg-emerald-950/60 rounded-xl p-2 border border-emerald-600/50 flex flex-col justify-center items-center gap-1 hover:border-emerald-400 transition">
+              <i class="fa-solid fa-house-chimney-user text-emerald-400 text-sm"></i>
+              <span class="text-[9px] text-emerald-300">พ.ค. ว.1</span>
+              <span class="truncate w-full">Stage 1 & 2</span>
+            </div>
+            <div class="col-span-1 bg-blue-950/60 rounded-xl p-2 border border-blue-600/50 flex flex-col justify-center items-center gap-1 hover:border-blue-400 transition">
+              <i class="fa-solid fa-brain text-blue-400 text-sm"></i>
+              <span class="text-[9px] text-blue-300">พ.ค. ว.2</span>
+              <span class="truncate w-full">S3: Studio 1</span>
+            </div>
+            <div class="col-span-1 bg-indigo-950/60 rounded-xl p-2 border border-indigo-600/50 flex flex-col justify-center items-center gap-1 hover:border-indigo-400 transition">
+              <i class="fa-solid fa-seedling text-indigo-400 text-sm"></i>
+              <span class="text-[9px] text-indigo-300">พ.ค. ว.3</span>
+              <span class="truncate w-full">S3: Studio 2</span>
+            </div>
+            <div class="col-span-1 bg-cyan-950/60 rounded-xl p-2 border border-cyan-600/50 flex flex-col justify-center items-center gap-1 hover:border-cyan-400 transition">
+              <i class="fa-solid fa-briefcase text-cyan-400 text-sm"></i>
+              <span class="text-[9px] text-cyan-300">พ.ค. ว.4</span>
+              <span class="truncate w-full">S3: Studio 3</span>
+            </div>
+
+            <!-- มิถุนายน -->
+            <div class="col-span-1 bg-teal-950/60 rounded-xl p-2 border border-teal-600/50 flex flex-col justify-center items-center gap-1 hover:border-teal-400 transition">
+              <i class="fa-solid fa-earth-asia text-teal-400 text-sm"></i>
+              <span class="text-[9px] text-teal-300">มิ.ย. ว.1</span>
+              <span class="truncate w-full">S3: Studio 4</span>
+            </div>
+            <div class="col-span-1 bg-purple-950/60 rounded-xl p-2 border border-purple-600/50 flex flex-col justify-center items-center gap-1 hover:border-purple-400 transition">
+              <i class="fa-solid fa-bolt-lightning text-purple-400 text-sm"></i>
+              <span class="text-[9px] text-purple-300">มิ.ย. ว.2</span>
+              <span class="truncate w-full">S4: Mission</span>
+            </div>
+            <div class="col-span-1 bg-purple-950/60 rounded-xl p-2 border border-purple-600/50 flex flex-col justify-center items-center gap-1 hover:border-purple-400 transition">
+              <i class="fa-solid fa-campground text-purple-400 text-sm"></i>
+              <span class="text-[9px] text-purple-300">มิ.ย. ว.3</span>
+              <span class="truncate w-full">S4: Expedition</span>
+            </div>
+
+            <!-- กรกฎาคม -->
+            <div class="col-span-1 bg-rose-950/60 rounded-xl p-2 border border-rose-600/50 flex flex-col justify-center items-center gap-1 hover:border-rose-400 transition">
+              <i class="fa-solid fa-magnifying-glass-chart text-rose-400 text-sm"></i>
+              <span class="text-[9px] text-rose-300">ก.ค. ว.1</span>
+              <span class="truncate w-full">S5: Explore</span>
+            </div>
+            <div class="col-span-1 bg-rose-950/60 rounded-xl p-2 border border-rose-600/50 flex flex-col justify-center items-center gap-1 hover:border-rose-400 transition">
+              <i class="fa-solid fa-rocket text-rose-400 text-sm"></i>
+              <span class="text-[9px] text-rose-300">ก.ค. ว.3</span>
+              <span class="truncate w-full">S5: Impact</span>
+            </div>
+            <div class="col-span-1 bg-amber-950/60 rounded-xl p-2 border border-amber-600/50 flex flex-col justify-center items-center gap-1 hover:border-amber-400 transition">
+              <i class="fa-solid fa-trophy text-amber-400 text-sm"></i>
+              <span class="text-[9px] text-amber-300">ก.ค. ว.4</span>
+              <span class="truncate w-full">S6: Showcase</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW TOGGLE & FILTER CONTROLS ==================== -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sticky top-24 z-40 bg-slate-950/85 backdrop-blur-md p-3 rounded-2xl border border-slate-700/80 shadow-xl no-print">
+      
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0" id="filterContainer">
+        <button onclick="filterPhase('all', this)" class="filter-btn active px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-layer-group text-xs"></i>
+          <span>ทั้งหมด (14 รายการ)</span>
+        </button>
+        <button onclick="filterPhase('pre', this)" class="filter-btn px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 transition flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+          <span>ก่อนเปิดบ้าน</span>
+        </button>
+        <button onclick="filterPhase('open', this)" class="filter-btn px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 transition flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>เปิดบ้าน (Stage 1-6)</span>
+        </button>
+      </div>
+
+      <!-- Right Side: View Switcher & Search -->
+      <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+        
+        <!-- View Mode Switcher -->
+        <div class="inline-flex rounded-xl bg-slate-900 p-1 border border-slate-700 shrink-0">
+          <button id="viewBtnTable" onclick="switchView('table')" class="px-3 py-1 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-table-list"></i>
+            <span>ตาราง (Table)</span>
+          </button>
+          <button id="viewBtnCards" onclick="switchView('cards')" class="px-3 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-grip-vertical"></i>
+            <span>การ์ด (Cards)</span>
+          </button>
+        </div>
+
+        <!-- Live Search Box -->
+        <div class="relative w-full sm:w-56 shrink-0">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input type="text" id="scheduleSearch" onkeyup="searchSchedule()" placeholder="ค้นหากิจกรรม, สัปดาห์..." class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-9 pr-4 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 1: GRAPHIC TABLE WITH CLEAN RELEVANT ICONS (NO PHOTOS)              -->
+    <!-- ========================================================================= -->
+    <main id="tableView" class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/60 shadow-2xl space-y-6">
+      
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/60 pb-4">
+        <div>
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-table-cells text-amber-400"></i> ตารางกำหนดการ (Official Schedule Matrix)
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
+            กำหนดการกิจกรรมและขั้นตอนการเรียนรู้
+          </h2>
+        </div>
+        <div class="text-xs text-slate-400 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800 flex items-center gap-1.5">
+          <i class="fa-solid fa-icons text-amber-400"></i>
+          <span>แสดงไอคอนสัญลักษณ์ตามลักษณะกิจกรรม</span>
+        </div>
+      </div>
+
+      <!-- Master Responsive Graphic Table -->
+      <div class="overflow-x-auto rounded-2xl border border-slate-700/70 shadow-lg custom-scrollbar">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse" id="scheduleTable">
+          
+          <!-- Table Header -->
+          <thead>
+            <tr class="bg-gradient-to-r from-slate-900 via-[#132742] to-slate-900 text-slate-200 border-b border-slate-700 text-xs sm:text-sm">
+              <th class="p-4 font-bold w-36 sm:w-44 tracking-wider text-amber-400 uppercase border-r border-slate-800">
+                <i class="fa-solid fa-calendar mr-2"></i> เดือน
+              </th>
+              <th class="p-4 font-bold w-24 sm:w-32 text-center tracking-wider text-emerald-400 uppercase border-r border-slate-800">
+                <i class="fa-regular fa-clock mr-1.5"></i> สัปดาห์ที่
+              </th>
+              <th class="p-4 font-bold tracking-wider text-slate-100 uppercase">
+                <i class="fa-solid fa-graduation-cap mr-2 text-blue-400"></i> กิจกรรม / ขั้นการเรียนรู้
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-slate-800/80 font-normal text-slate-300">
+            
+            <!-- ================= SECTION 1: ก่อนเปิดบ้าน ================= -->
+            <tr class="section-row bg-slate-900/90 border-y-2 border-slate-700" data-phase="pre">
+              <td colspan="3" class="p-3 sm:p-3.5 text-center font-bold text-sm text-amber-300 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 tracking-wide">
+                <div class="flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-door-closed text-slate-400"></i>
+                  <span>ก่อนเปิดบ้าน</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 1: กุมภาพันธ์ สัปดาห์ที่ 1 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="pre" data-search="กุมภาพันธ์ สัปดาห์ที่ 1 รับสมัครนิสิต มศว เข้าร่วมโครงการ ก่อนเปิดบ้าน">
+              <td class="p-4 font-semibold text-slate-200 bg-slate-900/40 border-r border-slate-800 align-middle">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                  <span class="text-sm sm:text-base font-bold text-white">กุมภาพันธ์</span>
+                </div>
+              </td>
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-200 font-bold text-xs border border-slate-700 shadow-sm">
+                  1
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/30 text-base shadow-sm">
+                      <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-amber-300 transition">
+                        รับสมัครนิสิต มศว เข้าร่วมโครงการ
+                      </div>
+                      <div class="text-[11px] text-slate-400 font-light mt-0.5">
+                        เปิดรับสมัครนิสิต มศว เข้าร่วมโครงการ HumanX Academy รุ่นที่ 1
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-slate-800/90 border border-slate-700 flex items-center justify-center text-blue-400 shadow-sm group-hover:scale-105 group-hover:border-blue-500/50 transition" title="เอกสารรับสมัคร">
+                    <i class="fa-solid fa-file-signature text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 2: มีนาคม สัปดาห์ที่ 2 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="pre" data-search="มีนาคม สัปดาห์ที่ 2 คัดเลือกนิสิต ก่อนเปิดบ้าน">
+              <td class="p-4 font-semibold text-slate-200 bg-slate-900/40 border-r border-slate-800 align-middle">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                  <span class="text-sm sm:text-base font-bold text-white">มีนาคม</span>
+                </div>
+              </td>
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-200 font-bold text-xs border border-slate-700 shadow-sm">
+                  2
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30 text-base shadow-sm">
+                      <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-amber-300 transition">
+                        คัดเลือกนิสิต
+                      </div>
+                      <div class="text-[11px] text-slate-400 font-light mt-0.5">
+                        คัดเลือกนิสิตทุนจำนวน 50 คน คละคณะและชั้นปี
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-slate-800/90 border border-slate-700 flex items-center justify-center text-amber-400 shadow-sm group-hover:scale-105 group-hover:border-amber-500/50 transition" title="คัดเลือก 50 คน">
+                    <i class="fa-solid fa-user-check text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+
+            <!-- ================= SECTION 2: เปิดบ้าน ================= -->
+            <tr class="section-row bg-slate-900/90 border-y-2 border-emerald-500/50" data-phase="open">
+              <td colspan="3" class="p-3 sm:p-3.5 text-center font-bold text-sm text-emerald-300 bg-gradient-to-r from-emerald-950/40 via-emerald-900/50 to-emerald-950/40 tracking-wide">
+                <div class="flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-door-open text-emerald-400"></i>
+                  <span>เปิดบ้าน</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 3: พฤษภาคม สัปดาห์ที่ 1 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="พฤษภาคม สัปดาห์ที่ 1 Stage 1 และ Stage 2 เปิดบ้าน">
+              <td class="p-4 font-semibold text-emerald-300 bg-emerald-950/15 border-r border-slate-800 align-top" rowspan="4">
+                <div class="sticky top-28 space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    <span class="text-sm sm:text-base font-bold text-white">พฤษภาคม</span>
+                  </div>
+                  <div class="text-[11px] text-emerald-400/80">4 สัปดาห์</div>
+                </div>
+              </td>
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-emerald-950/70 text-emerald-300 font-bold text-xs border border-emerald-700 shadow-sm">
+                  1
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-house-chimney-user"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-emerald-300 transition">
+                        Stage 1 และ Stage 2
+                      </div>
+                      <div class="text-[11px] text-emerald-400/90 font-light mt-0.5">
+                        Welcome Home & Discover Yourself
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-emerald-950/60 border border-emerald-500/40 flex items-center justify-center text-emerald-300 shadow-sm group-hover:scale-105 group-hover:border-emerald-400 transition" title="ค่ายศาลานา & ค้นหาตนเอง">
+                    <i class="fa-solid fa-campground text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 4: พฤษภาคม สัปดาห์ที่ 2 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="พฤษภาคม สัปดาห์ที่ 2 Stage 3 Studio 1 Think Forward Lab">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-blue-950/70 text-blue-300 font-bold text-xs border border-blue-700 shadow-sm">
+                  2
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-blue-300 transition">
+                        Stage 3: Studio 1 Think Forward Lab
+                      </div>
+                      <div class="text-[11px] text-blue-400/90 font-light mt-0.5">
+                        คิดเป็น ตัดสินใจบนข้อมูล & วิจารณญาณดิจิทัล
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-blue-950/60 border border-blue-500/40 flex items-center justify-center text-blue-300 shadow-sm group-hover:scale-105 group-hover:border-blue-400 transition" title="ความคิดสร้างสรรค์ & AI">
+                    <i class="fa-solid fa-lightbulb text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 5: พฤษภาคม สัปดาห์ที่ 3 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="พฤษภาคม สัปดาห์ที่ 3 Stage 3 Studio 2 Grow Forward Lab">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-indigo-950/70 text-indigo-300 font-bold text-xs border border-indigo-700 shadow-sm">
+                  3
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-indigo-300 transition">
+                        Stage 3: Studio 2 Grow Forward Lab
+                      </div>
+                      <div class="text-[11px] text-indigo-400/90 font-light mt-0.5">
+                        เติบโตเป็น จัดการตนเอง และสุขภาวะทางใจ
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-indigo-950/60 border border-indigo-500/40 flex items-center justify-center text-indigo-300 shadow-sm group-hover:scale-105 group-hover:border-indigo-400 transition" title="สุขภาวะทางใจ & EQ">
+                    <i class="fa-solid fa-heart-pulse text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 6: พฤษภาคม สัปดาห์ที่ 4 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="พฤษภาคม สัปดาห์ที่ 4 Stage 3 Studio 3 Work Forward Lab">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-cyan-950/70 text-cyan-300 font-bold text-xs border border-cyan-700 shadow-sm">
+                  4
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-cyan-300 transition">
+                        Stage 3: Studio 3 Work Forward Lab
+                      </div>
+                      <div class="text-[11px] text-cyan-400/90 font-light mt-0.5">
+                        ทำงานร่วมกับผู้อื่น การสื่อสาร และความเป็นผู้นำ
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-cyan-950/60 border border-cyan-500/40 flex items-center justify-center text-cyan-300 shadow-sm group-hover:scale-105 group-hover:border-cyan-400 transition" title="การทำงานเป็นทีม & ผู้นำ">
+                    <i class="fa-solid fa-handshake text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+
+            <!-- Row 7: มิถุนายน สัปดาห์ที่ 1 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="มิถุนายน สัปดาห์ที่ 1 Stage 3 Studio 4 Live Forward Lab">
+              <td class="p-4 font-semibold text-blue-300 bg-blue-950/15 border-r border-slate-800 align-top" rowspan="4">
+                <div class="sticky top-28 space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+                    <span class="text-sm sm:text-base font-bold text-white">มิถุนายน</span>
+                  </div>
+                  <div class="text-[11px] text-blue-400/80">4 สัปดาห์</div>
+                </div>
+              </td>
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-teal-950/70 text-teal-300 font-bold text-xs border border-teal-700 shadow-sm">
+                  1
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-earth-asia"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-teal-300 transition">
+                        Stage 3: Studio 4 Live Forward Lab
+                      </div>
+                      <div class="text-[11px] text-teal-400/90 font-light mt-0.5">
+                        ใช้ชีวิตเพื่อผู้อื่น จิตสาธารณะ และความยั่งยืน ESG
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-teal-950/60 border border-teal-500/40 flex items-center justify-center text-teal-300 shadow-sm group-hover:scale-105 group-hover:border-teal-400 transition" title="ความยั่งยืน ESG & ชุมชน">
+                    <i class="fa-solid fa-leaf text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 8: มิถุนายน สัปดาห์ที่ 2 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="มิถุนายน สัปดาห์ที่ 2 Stage 4 Team Mission Small Change Challenge">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-purple-950/70 text-purple-300 font-bold text-xs border border-purple-700 shadow-sm">
+                  2
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-purple-300 transition">
+                        Stage 4: Team Mission (Small Change Challenge)
+                      </div>
+                      <div class="text-[11px] text-purple-400/90 font-light mt-0.5">
+                        ภารกิจรวมพลังสร้างการเปลี่ยนแปลงเล็กๆ ที่ยิ่งใหญ่
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-purple-950/60 border border-purple-500/40 flex items-center justify-center text-purple-300 shadow-sm group-hover:scale-105 group-hover:border-purple-400 transition" title="โจทย์ท้าทายใน มศว">
+                    <i class="fa-solid fa-bullseye text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 9: มิถุนายน สัปดาห์ที่ 3 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="มิถุนายน สัปดาห์ที่ 3 Stage 4 HumanX Learning Expedition">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-purple-950/70 text-purple-300 font-bold text-xs border border-purple-700 shadow-sm">
+                  3
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 text-purple-400 flex items-center justify-center shrink-0 border border-purple-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-purple-300 transition">
+                        Stage 4: HumanX Learning Expedition
+                      </div>
+                      <div class="text-[11px] text-purple-400/90 font-light mt-0.5">
+                        ลงพื้นที่สำรวจโจทย์ชุมชนจริง
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-purple-950/60 border border-purple-500/40 flex items-center justify-center text-purple-300 shadow-sm group-hover:scale-105 group-hover:border-purple-400 transition" title="สำรวจพื้นที่ต่างจังหวัด">
+                    <i class="fa-solid fa-map-location-dot text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 10: มิถุนายน สัปดาห์ที่ 4 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="มิถุนายน สัปดาห์ที่ 4 Stage 4 Expedition Reflection และ Stage 5 Challenge Selection">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-purple-950/70 text-purple-300 font-bold text-xs border border-purple-700 shadow-sm">
+                  4
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-purple-500/20 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-rose-300 transition">
+                        Stage 4: Expedition Reflection และ Stage 5: Challenge Selection
+                      </div>
+                      <div class="text-[11px] text-rose-400/90 font-light mt-0.5">
+                        ถอดบทเรียนภาคสนาม และคัดเลือกโจทย์ท้าทายระดับประเทศ
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-rose-950/60 border border-rose-500/40 flex items-center justify-center text-rose-300 shadow-sm group-hover:scale-105 group-hover:border-rose-400 transition" title="คัดเลือกโจทย์ Capstone">
+                    <i class="fa-solid fa-chess-knight text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+
+            <!-- Row 11: กรกฎาคม สัปดาห์ที่ 1 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="กรกฎาคม สัปดาห์ที่ 1 Stage 5 Thailand Challenge Explore และ Define">
+              <td class="p-4 font-semibold text-amber-300 bg-amber-950/15 border-r border-slate-800 align-top" rowspan="4">
+                <div class="sticky top-28 space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                    <span class="text-sm sm:text-base font-bold text-white">กรกฎาคม</span>
+                  </div>
+                  <div class="text-[11px] text-amber-400/80">4 สัปดาห์</div>
+                </div>
+              </td>
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-rose-950/70 text-rose-300 font-bold text-xs border border-rose-700 shadow-sm">
+                  1
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-orange-500/20 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-rose-300 transition">
+                        Stage 5: Thailand Challenge (Explore และ Define)
+                      </div>
+                      <div class="text-[11px] text-rose-400/90 font-light mt-0.5">
+                        เจาะลึกและนิยามปัญหาของผู้ใช้จริง
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-rose-950/60 border border-rose-500/40 flex items-center justify-center text-rose-300 shadow-sm group-hover:scale-105 group-hover:border-rose-400 transition" title="เจาะลึกข้อมูลผู้ใช้จริง">
+                    <i class="fa-solid fa-microscope text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 12: กรกฎาคม สัปดาห์ที่ 1 (Prototype และ Test) -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="กรกฎาคม สัปดาห์ที่ 1 Stage 5 Thailand Challenge Prototype และ Test">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-rose-950/70 text-rose-300 font-bold text-xs border border-rose-700 shadow-sm">
+                  1
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-rose-300 transition">
+                        Stage 5: Thailand Challenge (Prototype และ Test)
+                      </div>
+                      <div class="text-[11px] text-rose-400/90 font-light mt-0.5">
+                        สร้างต้นแบบนวัตกรรมและทดสอบกับกลุ่มเป้าหมาย
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-rose-950/60 border border-rose-500/40 flex items-center justify-center text-rose-300 shadow-sm group-hover:scale-105 group-hover:border-rose-400 transition" title="ต้นแบบ & การทดลองจริง">
+                    <i class="fa-solid fa-flask-vial text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 13: กรกฎาคม สัปดาห์ที่ 3 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="กรกฎาคม สัปดาห์ที่ 3 Stage 5 Thailand Challenge Create Impact">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-rose-950/70 text-rose-300 font-bold text-xs border border-rose-700 shadow-sm">
+                  3
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/20 to-rose-500/20 text-orange-400 flex items-center justify-center shrink-0 border border-orange-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-orange-300 transition">
+                        Stage 5: Thailand Challenge (Create Impact)
+                      </div>
+                      <div class="text-[11px] text-orange-400/90 font-light mt-0.5">
+                        ประเมินผลกระทบทางสังคมและความคุ้มค่า
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-orange-950/60 border border-orange-500/40 flex items-center justify-center text-orange-300 shadow-sm group-hover:scale-105 group-hover:border-orange-400 transition" title="ขยายผลกระทบสู่สังคม">
+                    <i class="fa-solid fa-rocket text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 14: กรกฎาคม สัปดาห์ที่ 4 -->
+            <tr class="schedule-row hover:bg-slate-800/50 transition group" data-phase="open" data-search="กรกฎาคม สัปดาห์ที่ 4 Stage 6 HumanX Showcase & Homecoming">
+              <td class="p-4 text-center border-r border-slate-800 align-middle">
+                <span class="inline-block px-3 py-1 rounded-full bg-amber-950/70 text-amber-300 font-bold text-xs border border-amber-700 shadow-sm">
+                  4
+                </span>
+              </td>
+              <td class="p-4 align-middle">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/40 text-base shadow-sm">
+                      <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                      <div class="text-sm sm:text-base font-semibold text-white group-hover:text-amber-300 transition">
+                        Stage 6: HumanX Showcase & Homecoming
+                      </div>
+                      <div class="text-[11px] text-amber-400/90 font-light mt-0.5">
+                        เวทีนำเสนอผลงาน พิธีมอบเกียรติบัตร และศิษย์เก่าคืนสู่เหย้า
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Relevant Icon Badge (Replaces Photo) -->
+                  <div class="shrink-0 w-11 h-11 rounded-xl bg-amber-950/60 border border-amber-500/40 flex items-center justify-center text-amber-300 shadow-sm group-hover:scale-105 group-hover:border-amber-400 transition" title="เกียรติบัตร & รางวัล">
+                    <i class="fa-solid fa-award text-base"></i>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table Summary Footer Note -->
+      <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-700/60">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-circle-check text-emerald-400"></i>
+          <span>แสดงรายการกิจกรรมครบถ้วน 14 รายการ พร้อมไอคอนสัญลักษณ์ประจำกิจกรรม</span>
+        </div>
+        <div class="text-[11px] text-slate-500">
+          มศว × มูลนิธิสุทธิรัตน์ อยู่วิทยา
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 2: ACTIVITY CARDS GRID WITH CLEAN ICONS                             -->
+    <!-- ========================================================================= -->
+    <div id="cardsView" class="hidden space-y-8">
+      
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/60 pb-3">
+        <div>
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-grip-vertical text-amber-400"></i> มุมมองการ์ดกิจกรรม (Activity Cards Grid)
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">
+            กิจกรรมรายสัปดาห์ในรูปแบบการ์ดไอคอน
+          </h2>
+        </div>
+        <div class="text-xs text-slate-400">
+          แสดงครบทั้ง 14 รายการ เรียงตามลำดับเวลา
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Card 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="pre">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl border border-blue-500/30">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center text-base border border-slate-700">
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-300">กุมภาพันธ์ • สัปดาห์ที่ 1</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              รับสมัครนิสิต มศว เข้าร่วมโครงการ
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">เปิดรับสมัครนิสิต มศว เข้าร่วมโครงการ HumanX Academy</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ก่อนเปิดบ้าน</span>
+            <span class="text-blue-400 font-medium">Recruitment</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="pre">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl border border-amber-500/30">
+              <i class="fa-solid fa-filter"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center text-base border border-slate-700">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-300">มีนาคม • สัปดาห์ที่ 2</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              คัดเลือกนิสิต
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">คัดเลือกนิสิตทุนจำนวน 50 คน คละคณะและชั้นปี</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ก่อนเปิดบ้าน</span>
+            <span class="text-amber-400 font-medium">Selection</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl border border-emerald-500/40">
+              <i class="fa-solid fa-house-chimney-user"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-950/80 text-emerald-300 flex items-center justify-center text-base border border-emerald-700">
+              <i class="fa-solid fa-campground"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-emerald-300">พฤษภาคม • สัปดาห์ที่ 1</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 1 และ Stage 2
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">Welcome Home & Discover Yourself</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ศาลานา & HumanX House</span>
+            <span class="text-emerald-400 font-medium">Stage 1-2</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl border border-blue-500/40">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-blue-950/80 text-blue-300 flex items-center justify-center text-base border border-blue-700">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-blue-300">พฤษภาคม • สัปดาห์ที่ 2</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 3: Studio 1 Think Forward Lab
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">คิดเป็น ตัดสินใจบนข้อมูล & วิจารณญาณดิจิทัล</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ห้องทดลองทักษะ</span>
+            <span class="text-blue-400 font-medium">Studio 1</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl border border-indigo-500/40">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-indigo-950/80 text-indigo-300 flex items-center justify-center text-base border border-indigo-700">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-indigo-300">พฤษภาคม • สัปดาห์ที่ 3</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 3: Studio 2 Grow Forward Lab
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">เติบโตเป็น จัดการตนเอง และสุขภาวะทางใจ</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ห้องทดลองทักษะ</span>
+            <span class="text-indigo-400 font-medium">Studio 2</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl border border-cyan-500/40">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-950/80 text-cyan-300 flex items-center justify-center text-base border border-cyan-700">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-cyan-300">พฤษภาคม • สัปดาห์ที่ 4</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 3: Studio 3 Work Forward Lab
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ทำงานร่วมกับผู้อื่น การสื่อสาร และความเป็นผู้นำ</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ห้องทดลองทักษะ</span>
+            <span class="text-cyan-400 font-medium">Studio 3</span>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl border border-teal-500/40">
+              <i class="fa-solid fa-earth-asia"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-teal-950/80 text-teal-300 flex items-center justify-center text-base border border-teal-700">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-teal-300">มิถุนายน • สัปดาห์ที่ 1</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 3: Studio 4 Live Forward Lab
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ใช้ชีวิตเพื่อผู้อื่น จิตสาธารณะ และความยั่งยืน ESG</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ห้องทดลองทักษะ</span>
+            <span class="text-teal-400 font-medium">Studio 4</span>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl border border-purple-500/40">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-purple-950/80 text-purple-300 flex items-center justify-center text-base border border-purple-700">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-purple-300">มิถุนายน • สัปดาห์ที่ 2</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 4: Team Mission (Small Change Challenge)
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ภารกิจสร้างการเปลี่ยนแปลงระดับทีมใน มศว</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ภารกิจใน มศว</span>
+            <span class="text-purple-400 font-medium">Stage 4</span>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl border border-purple-500/40">
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-purple-950/80 text-purple-300 flex items-center justify-center text-base border border-purple-700">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-purple-300">มิถุนายน • สัปดาห์ที่ 3</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 4: HumanX Learning Expedition
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ลงพื้นที่สำรวจโจทย์ชุมชนจริง</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>ค่ายต่างจังหวัด</span>
+            <span class="text-purple-400 font-medium">Expedition</span>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl border border-rose-500/40">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-rose-950/80 text-rose-300 flex items-center justify-center text-base border border-rose-700">
+              <i class="fa-solid fa-chess-knight"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-rose-300">มิถุนายน • สัปดาห์ที่ 4</div>
+            <h3 class="text-base font-bold text-white mt-1 leading-snug">
+              Stage 4: Expedition Reflection และ Stage 5: Challenge Selection
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ถอดบทเรียนและคัดเลือกโจทย์ท้าทายระดับประเทศ</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>เปลี่ยนผ่านสู่ Capstone</span>
+            <span class="text-rose-400 font-medium">S4 - S5</span>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl border border-rose-500/40">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-rose-950/80 text-rose-300 flex items-center justify-center text-base border border-rose-700">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-rose-300">กรกฎาคม • สัปดาห์ที่ 1</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 5: Thailand Challenge (Explore และ Define)
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">เจาะลึกและนิยามปัญหาผู้ใช้จริง</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>Capstone Sprint 1</span>
+            <span class="text-rose-400 font-medium">Explore</span>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl border border-rose-500/40">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-rose-950/80 text-rose-300 flex items-center justify-center text-base border border-rose-700">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-rose-300">กรกฎาคม • สัปดาห์ที่ 1</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 5: Thailand Challenge (Prototype และ Test)
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">สร้างต้นแบบนวัตกรรมและทดสอบกับผู้ใช้จริง</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>Capstone Sprint 2</span>
+            <span class="text-rose-400 font-medium">Prototype</span>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl border border-orange-500/40">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-orange-950/80 text-orange-300 flex items-center justify-center text-base border border-orange-700">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-orange-300">กรกฎาคม • สัปดาห์ที่ 3</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 5: Thailand Challenge (Create Impact)
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">ประเมินผลกระทบทางสังคมและความคุ้มค่า</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>Capstone Sprint 3</span>
+            <span class="text-orange-400 font-medium">Impact</span>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/70 flex flex-col justify-between space-y-4" data-phase="open">
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl border border-amber-500/40">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-amber-950/80 text-amber-300 flex items-center justify-center text-base border border-amber-700">
+              <i class="fa-solid fa-award"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-300">กรกฎาคม • สัปดาห์ที่ 4</div>
+            <h3 class="text-base font-bold text-white mt-1">
+              Stage 6: HumanX Showcase & Homecoming
+            </h3>
+            <p class="text-xs text-slate-300 mt-1 font-light">เวทีนำเสนอผลงาน พิธีมอบเกียรติบัตร และสู่เหย้า</p>
+          </div>
+          <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+            <span>หอประชุมใหญ่ มศว</span>
+            <span class="text-amber-400 font-medium">Stage 6</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== CROSS-PAGE NAVIGATION FOOTER ==================== -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 no-print">
+      <a href="index.html" class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/80 flex items-center justify-between group">
+        <div class="space-y-1">
+          <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider">Page 1</div>
+          <div class="text-lg font-bold text-white group-hover:text-amber-300 transition">What is HumanX Academy?</div>
+          <p class="text-xs text-slate-400 font-light">ทำความรู้จักวิสัยทัศน์ ความเป็นมา ตารางเปรียบเทียบ 8 มิติ และ 5 เสาหลักเอกลักษณ์</p>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-slate-400 flex items-center justify-center transition shrink-0 ml-4">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      </a>
+
+      <a href="journey.html" class="glass-card glass-card-hover rounded-2xl p-6 border border-slate-700/80 flex items-center justify-between group">
+        <div class="space-y-1">
+          <div class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Page 2</div>
+          <div class="text-lg font-bold text-white group-hover:text-emerald-300 transition">Learning Journey (6 Stages)</div>
+          <p class="text-xs text-slate-400 font-light">สำรวจรายละเอียดเชิงลึกของ 6 ขั้นการเรียนรู้, 4 Skill Studios, 4 Tours และภาพกิจกรรมจริง</p>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-slate-800 group-hover:bg-emerald-500 group-hover:text-slate-950 text-slate-400 flex items-center justify-center transition shrink-0 ml-4">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- ==================== SITE FOOTER ==================== -->
+    <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 space-y-2">
+      <div class="flex flex-wrap items-center justify-center gap-3 text-slate-400 font-medium">
+        <span>มหาวิทยาลัยศรีนครินทรวิโรฒ (มศว)</span>
+        <span>•</span>
+        <span>สำนักนวัตกรรมการเรียนรู้</span>
+        <span>•</span>
+        <span>มูลนิธิสุทธิรัตน์ อยู่วิทยา</span>
+      </div>
+      <div>
+        HumanX Academy — สถาบันพัฒนาคนแห่งอนาคตประเทศไทย | เอกสารข้อมูลกำหนดการโครงการ
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==================== JAVASCRIPT: FILTER, SEARCH, VIEW SWITCHER & ICS EXPORT ==================== -->
+  <script>
+    // View Switcher (Table vs Cards)
+    function switchView(mode) {
+      const tableView = document.getElementById('tableView');
+      const cardsView = document.getElementById('cardsView');
+      const btnTable = document.getElementById('viewBtnTable');
+      const btnCards = document.getElementById('viewBtnCards');
+
+      if (mode === 'table') {
+        tableView.classList.remove('hidden');
+        cardsView.classList.add('hidden');
+        btnTable.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-1.5 transition';
+        btnCards.className = 'px-3 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+      } else {
+        tableView.classList.add('hidden');
+        cardsView.classList.remove('hidden');
+        btnCards.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-1.5 transition';
+        btnTable.className = 'px-3 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+      }
+    }
+
+    // Phase Filtering (ทั้งหมด, ก่อนเปิดบ้าน, เปิดบ้าน)
+    function filterPhase(phase, btnElement) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+        btn.classList.add('bg-slate-800', 'text-slate-300', 'font-medium');
+      });
+      btnElement.classList.remove('bg-slate-800', 'text-slate-300', 'font-medium');
+      btnElement.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+
+      // Filter Table Rows
+      const rows = document.querySelectorAll('.schedule-row');
+      const sectionRows = document.querySelectorAll('.section-row');
+
+      if (phase === 'all') {
+        rows.forEach(r => r.style.display = '');
+        sectionRows.forEach(s => s.style.display = '');
+      } else {
+        rows.forEach(r => {
+          r.style.display = (r.getAttribute('data-phase') === phase) ? '' : 'none';
+        });
+        sectionRows.forEach(s => {
+          s.style.display = (s.getAttribute('data-phase') === phase) ? '' : 'none';
+        });
+      }
+
+      // Filter Cards
+      const cards = document.querySelectorAll('#cardsView > div > div');
+      cards.forEach(card => {
+        if (phase === 'all') {
+          card.style.display = '';
+        } else {
+          card.style.display = (card.getAttribute('data-phase') === phase) ? '' : 'none';
+        }
+      });
+    }
+
+    // Real-time Search
+    function searchSchedule() {
+      const query = document.getElementById('scheduleSearch').value.toLowerCase().trim();
+      const rows = document.querySelectorAll('.schedule-row');
+      
+      rows.forEach(row => {
+        const text = (row.getAttribute('data-search') || '') + ' ' + row.innerText.toLowerCase();
+        if (!query || text.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      const cards = document.querySelectorAll('#cardsView > div > div');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (!query || text.includes(query)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // iCalendar (.ics) export
+    function downloadICS() {
+      const icsData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//HumanX Academy//SWU & Suthirat Yoovidhya Foundation//TH",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "X-WR-CALNAME:HumanX Academy Schedule",
+        "X-WR-TIMEZONE:Asia/Bangkok",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:รับสมัครนิสิต มศว เข้าร่วมโครงการ (ก่อนเปิดบ้าน)",
+        "DESCRIPTION:รับสมัครนิสิต มศว เข้าร่วมโครงการ HumanX Academy",
+        "DTSTART;VALUE=DATE:20270201",
+        "DTEND;VALUE=DATE:20270208",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:คัดเลือกนิสิต (ก่อนเปิดบ้าน)",
+        "DESCRIPTION:คัดเลือกนิสิต มศว เข้าร่วมโครงการ HumanX Academy",
+        "DTSTART;VALUE=DATE:20270308",
+        "DTEND;VALUE=DATE:20270315",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 1 และ Stage 2 (เปิดบ้าน)",
+        "DESCRIPTION:Stage 1 และ Stage 2 หลักสูตร HumanX Academy",
+        "DTSTART;VALUE=DATE:20270503",
+        "DTEND;VALUE=DATE:20270510",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 3: Studio 1 Think Forward Lab",
+        "DESCRIPTION:Stage 3: Studio 1 Think Forward Lab",
+        "DTSTART;VALUE=DATE:20270510",
+        "DTEND;VALUE=DATE:20270517",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 3: Studio 2 Grow Forward Lab",
+        "DESCRIPTION:Stage 3: Studio 2 Grow Forward Lab",
+        "DTSTART;VALUE=DATE:20270517",
+        "DTEND;VALUE=DATE:20270524",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 3: Studio 3 Work Forward Lab",
+        "DESCRIPTION:Stage 3: Studio 3 Work Forward Lab",
+        "DTSTART;VALUE=DATE:20270524",
+        "DTEND;VALUE=DATE:20270531",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 3: Studio 4 Live Forward Lab",
+        "DESCRIPTION:Stage 3: Studio 4 Live Forward Lab",
+        "DTSTART;VALUE=DATE:20270601",
+        "DTEND;VALUE=DATE:20270608",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 4: Team Mission (Small Change Challenge)",
+        "DESCRIPTION:Stage 4: Team Mission (Small Change Challenge)",
+        "DTSTART;VALUE=DATE:20270608",
+        "DTEND;VALUE=DATE:20270615",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 4: HumanX Learning Expedition",
+        "DESCRIPTION:Stage 4: HumanX Learning Expedition",
+        "DTSTART;VALUE=DATE:20270615",
+        "DTEND;VALUE=DATE:20270622",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 4: Expedition Reflection และ Stage 5: Challenge Selection",
+        "DESCRIPTION:Stage 4: Expedition Reflection และ Stage 5: Challenge Selection",
+        "DTSTART;VALUE=DATE:20270622",
+        "DTEND;VALUE=DATE:20270629",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 5: Thailand Challenge (Explore และ Define)",
+        "DESCRIPTION:Stage 5: Thailand Challenge (Explore และ Define)",
+        "DTSTART;VALUE=DATE:20270701",
+        "DTEND;VALUE=DATE:20270708",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 5: Thailand Challenge (Prototype และ Test)",
+        "DESCRIPTION:Stage 5: Thailand Challenge (Prototype และ Test)",
+        "DTSTART;VALUE=DATE:20270708",
+        "DTEND;VALUE=DATE:20270715",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 5: Thailand Challenge (Create Impact)",
+        "DESCRIPTION:Stage 5: Thailand Challenge (Create Impact)",
+        "DTSTART;VALUE=DATE:20270715",
+        "DTEND;VALUE=DATE:20270722",
+        "END:VEVENT",
+
+        "BEGIN:VEVENT",
+        "SUMMARY:Stage 6: HumanX Showcase & Homecoming",
+        "DESCRIPTION:Stage 6: HumanX Showcase & Homecoming",
+        "DTSTART;VALUE=DATE:20270722",
+        "DTEND;VALUE=DATE:20270729",
+        "END:VEVENT",
+
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'HumanX_Schedule.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Journey - HumanX Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              navy: '#0b192c',
+              slate: '#1e3e62',
+              primary: '#0052cc',
+              coral: '#ff6500',
+              gold: '#f59e0b',
+              emerald: '#059669',
+              teal: '#0d9488',
+              crimson: '#e11d48',
+              dark: '#070f1a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0d1b2a 0%, #070f1a 100%);
+      color: #e2e8f0;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px 2px rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+    .asian-tag {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(225, 29, 72, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .img-zoom {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.04);
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+        color: #111827 !important;
+      }
+      img {
+        max-height: 280px !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 selection:bg-brand-coral selection:text-white">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <nav class="max-w-7xl mx-auto mb-8 glass-card rounded-2xl px-5 py-3.5 border border-slate-700/60 shadow-xl sticky top-4 z-50">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+            HX
+          </div>
+          <div>
+            <div class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+              Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">X</span> Academy
+            </div>
+            <div class="text-[11px] text-slate-400">มศว × มูลนิธิสุทธิรัตน์ อยู่วิทยา</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Interconnected Links -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-house-chimney text-xs"></i>
+          <span>What is HumanX?</span>
+        </a>
+        <a href="journey.html" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow-md shadow-amber-500/20 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-route text-xs"></i>
+          <span>Learning Journey</span>
+        </a>
+        <a href="schedule.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-calendar-days text-xs"></i>
+          <span>Schedule</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Interactive Controls Ribbon (Filters + Print) -->
+  <div class="max-w-7xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 no-print">
+    <div class="flex items-center gap-3">
+      <span class="px-3.5 py-1 asian-tag text-amber-300 text-xs font-semibold rounded-full flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        6 Stages Learning Journey Blueprint
+      </span>
+      <span class="text-xs text-slate-400">แผนผังแสดงเส้นทางการเติบโต</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="window.print()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium rounded-lg border border-slate-700 flex items-center gap-2 transition">
+        <i class="fa-solid fa-print"></i> พิมพ์ / บันทึก PDF
+      </button>
+      <button onclick="toggleFilters('all')" id="btn-all" class="filter-btn px-3 py-1.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg transition">ทั้งหมด (All)</button>
+      <button onclick="toggleFilters('foundation')" id="btn-foundation" class="filter-btn px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition">4 Skill Studios</button>
+      <button onclick="toggleFilters('capstone')" id="btn-capstone" class="filter-btn px-3 py-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-medium rounded-lg transition">Capstone & Showcase</button>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Hero Header with Asian Academy Atmosphere -->
+    <header class="relative rounded-3xl p-6 sm:p-10 lg:p-12 mb-12 overflow-hidden border border-slate-700/60 bg-gradient-to-br from-slate-900 via-[#0e1d32] to-[#081324] shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Hero Text Column -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full asian-tag text-amber-300 text-xs font-medium">
+            <i class="fa-solid fa-graduation-cap text-amber-400"></i> สถาบันพัฒนาศักยภาพมนุษย์สู่อนาคต มหาวิทยาลัยศรีนครินทรวิโรฒ
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white leading-tight">
+            Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400">X</span> Academy
+          </h1>
+          <p class="text-lg sm:text-2xl font-medium text-slate-200">
+            เส้นทางการเรียนรู้ 6 ช่วงการเติบโต <span class="text-amber-400 font-semibold">(6 Stages Learning Journey)</span>
+          </p>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+            บ่มเพาะนิสิตต้นแบบ 50 คน (10 ทีมบ้าน) ในบรรยากาศการเรียนรู้อบอุ่นแบบ HumanX House ผ่าน 4 Skill Studios การศึกษาดูงาน School Tours 4 แห่ง ค่ายสำรวจภาคสนาม และการลงมือแก้โจทย์จริงระดับประเทศผ่าน Thailand Challenge
+          </p>
+
+          <!-- Core Numbers Ribbon -->
+          <div class="grid grid-cols-4 gap-2 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+              <div class="text-2xl font-bold text-amber-400 font-display">6</div>
+              <div class="text-[11px] text-slate-400">Stages</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+              <div class="text-2xl font-bold text-emerald-400 font-display">4</div>
+              <div class="text-[11px] text-slate-400">Studios</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+              <div class="text-2xl font-bold text-teal-400 font-display">4+2</div>
+              <div class="text-[11px] text-slate-400">Tours & Camps</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+              <div class="text-2xl font-bold text-rose-400 font-display">50</div>
+              <div class="text-[11px] text-slate-400">Fellows</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Asian Photo Column -->
+        <div class="lg:col-span-5 relative group">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30">
+            <img src="images/hero.jpg" alt="Asian students collaborating in HumanX House" class="w-full h-72 sm:h-80 object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+              <span class="text-white font-medium flex items-center gap-1.5">
+                <i class="fa-solid fa-house-chimney text-amber-400"></i> HumanX House Community
+              </span>
+              <span class="text-amber-300 text-[11px] px-2 py-0.5 rounded bg-slate-900/80 border border-amber-500/40">
+                Safe Learning Space
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Bar -->
+      <div class="mt-8 pt-6 border-t border-slate-800/90 grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="flex items-center gap-2.5 text-xs text-slate-300">
+          <span class="w-3 h-3 rounded-full bg-blue-500 shadow-sm shadow-blue-500/50"></span>
+          <span><strong>Think Forward:</strong> คิดวิจารณญาณ & AI</span>
+        </div>
+        <div class="flex items-center gap-2.5 text-xs text-slate-300">
+          <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></span>
+          <span><strong>Grow Forward:</strong> นำตนเอง & ความฉลาดทางอารมณ์</span>
+        </div>
+        <div class="flex items-center gap-2.5 text-xs text-slate-300">
+          <span class="w-3 h-3 rounded-full bg-amber-500 shadow-sm shadow-amber-500/50"></span>
+          <span><strong>Work Forward:</strong> สื่อสาร & ความเป็นผู้นำ</span>
+        </div>
+        <div class="flex items-center gap-2.5 text-xs text-slate-300">
+          <span class="w-3 h-3 rounded-full bg-rose-500 shadow-sm shadow-rose-500/50"></span>
+          <span><strong>Live Forward:</strong> จิตสาธารณะ & ความยั่งยืน</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Stages Flow -->
+    <div class="space-y-12">
+
+      <!-- ==================== STAGE 1 ==================== -->
+      <div class="stage-section" data-category="onboarding">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-amber-500 glass-card-hover group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-2xl font-bold font-display">
+                1
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Stage 01 • Initiation Camp</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Welcome Home: เปิดบ้าน สร้างความเป็นสมาชิก</h2>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3.5 py-1 bg-amber-500/15 text-amber-300 border border-amber-500/40 rounded-full text-xs font-medium flex items-center gap-1.5">
+                <i class="fa-solid fa-campground"></i> นอกสถานที่ 2 วัน 1 คืน ณ ศาลานา
+              </span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs border border-slate-700">
+                <i class="fa-solid fa-users"></i> 50 นิสิต (10 ทีม ทีมละ 5 คน)
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Image Left / Top -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl border border-slate-700/80">
+              <img src="images/stage1_welcome.jpg" alt="Asian students at Salana organic farm" class="w-full h-64 sm:h-72 object-cover img-zoom">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-xs">
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[10px] font-bold block w-fit mb-1">ศาลานา (Salana Eco-Farm)</span>
+                <p class="text-slate-200 text-[11px] leading-tight font-medium">ศึกษาดูงานโจทย์ "กว่าจะมาเป็นศาลานา" เรียนรู้ปัจจัยความสำเร็จและวิถีเกษตรอินทรีย์ยั่งยืน</p>
+              </div>
+            </div>
+
+            <!-- Content Right -->
+            <div class="lg:col-span-7 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                สร้างความรู้สึกเป็นสมาชิกของชุมชนแห่งการเติบโต <span class="text-amber-300 font-medium">"ที่นี่เป็นพื้นที่ปลอดภัยที่ฉันสามารถทดลอง ผิดพลาด และเติบโตได้"</span> บ่มเพาะความผูกพันและตั้งเป้าหมายชีวิตร่วมกัน
+              </p>
+
+              <!-- 6 Activities Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-door-open"></i> ปฐมนิเทศ: Welcome to HumanX House
+                  </div>
+                  <p class="text-[11px] text-slate-400">แนะนำ 6 Stages กรอบทักษะ และแนวทางประเมินผล</p>
+                </div>
+
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-handshake-angle"></i> Ice-Breaking Connection
+                  </div>
+                  <p class="text-[11px] text-slate-400">ทำความรู้จักผ่านจุดแข็ง ประสบการณ์ และประเด็นสังคม</p>
+                </div>
+
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-people-roof"></i> House Team Formation
+                  </div>
+                  <p class="text-[11px] text-slate-400">แบ่ง 50 คนเป็น 10 ทีม คละคณะ ชั้นปี และความสนใจ</p>
+                </div>
+
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-file-contract"></i> Team Charter กติกาใจ
+                  </div>
+                  <p class="text-[11px] text-slate-400">ร่วมตั้งข้อตกลง บทบาท การสื่อสาร และการตัดสินใจ</p>
+                </div>
+
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-book-bookmark"></i> HumanX Growth Journey
+                  </div>
+                  <p class="text-[11px] text-slate-400">มอบสมุดสะสม Stamp ทักษะ + วาดภาพ My Future Self</p>
+                </div>
+
+                <div class="bg-slate-900/70 border border-slate-800 p-3 rounded-xl">
+                  <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+                    <i class="fa-solid fa-compass"></i> Personal Mission Self-Discovery
+                  </div>
+                  <p class="text-[11px] text-slate-400">เลือกทักษะเป้าหมาย 2-3 ด้าน กำหนดเป็นภารกิจของตนเอง</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 2 ==================== -->
+      <div class="stage-section" data-category="onboarding">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-teal-500 glass-card-hover group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 text-2xl font-bold font-display">
+                2
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-teal-400">Stage 02 • Self Exploration</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Discover Yourself: รู้จักตนเองและกำหนดเป้าหมาย</h2>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3.5 py-1 bg-teal-500/15 text-teal-300 border border-teal-500/40 rounded-full text-xs font-medium flex items-center gap-1.5">
+                <i class="fa-solid fa-house"></i> กิจกรรมที่บ้าน รวม 2 วัน (0.5 วัน + 1.5 วัน)
+              </span>
+              <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs border border-slate-700">
+                <i class="fa-solid fa-video"></i> วิดีโอ 3 นาที (Baseline Pitching)
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Content Left -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-900/70 rounded-2xl p-5 border border-slate-800">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-teal-400 flex items-center gap-1.5">
+                      <i class="fa-solid fa-heart-pulse"></i> ส่วนที่ 1 (ครึ่งวัน)
+                    </span>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Inspirational Talk</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white mb-2">Mindset เพื่อส่วนรวม</h3>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    ฟังการบรรยายและเสวนาจากวิทยากรต้นแบบ (Role Model) ที่ใช้ความรู้สร้างประโยชน์แก่ส่วนรวมและขับเคลื่อนสังคม
+                  </p>
+                </div>
+
+                <div class="bg-slate-900/70 rounded-2xl p-5 border border-slate-800">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-teal-400 flex items-center gap-1.5">
+                      <i class="fa-solid fa-microphone-lines"></i> ส่วนที่ 2 (1 วันครึ่ง)
+                    </span>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Station Workshops</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white mb-2">บุคลิกภาพ & การนำเสนอ</h3>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    ฝึกใช้น้ำเสียง ภาษากาย Storytelling พร้อมเวียนสถานีจำลอง (เช่น ผู้สื่อข่าว นักธุรกิจ)
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-3.5 bg-teal-950/40 border border-teal-500/30 rounded-xl flex items-center gap-3 text-xs text-teal-200">
+                <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 text-base">
+                  <i class="fa-solid fa-clapperboard"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-white">บันทึกวิดีโอนำเสนอตนเองใน 3 นาที</div>
+                  <div class="text-[11px] text-teal-300/80">ใช้เป็นหลักฐานตั้งต้น (Baseline Performance) เพื่อเทียบพัฒนาการเมื่อจบหลักสูตรใน Stage 6</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl border border-slate-700/80">
+              <img src="images/stage2_discover.jpg" alt="Asian student pitch storytelling on stage" class="w-full h-64 sm:h-72 object-cover img-zoom">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-xs">
+                <span class="px-2 py-0.5 rounded bg-teal-500/20 border border-teal-400/40 text-teal-300 text-[10px] font-bold block w-fit mb-1">Storytelling & Presentation Station</span>
+                <p class="text-slate-200 text-[11px] font-medium leading-tight">ฝึกความมั่นใจ นำเสนอความคิด และค้นพบคุณค่าภายในของตนเอง</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 3 ==================== -->
+      <div class="stage-section" data-category="foundation">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-blue-500 group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl font-bold font-display">
+                3
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Stage 03 • Core Capability Sandbox</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Build the Foundations: 4 Skill Studios & Learning Expedition</h2>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3.5 py-1 bg-blue-500/15 text-blue-300 border border-blue-500/40 rounded-full text-xs font-medium">
+                4 Skill Studios + 4 School Tours + ค่าย 2 วัน 1 คืน
+              </span>
+            </div>
+          </div>
+
+          <!-- Studio Feature Image Banner -->
+          <div class="relative rounded-2xl overflow-hidden mb-8 border border-slate-700/80 shadow-2xl">
+            <img src="images/stage3_studios.jpg" alt="Asian students working in Skill Studio Lab" class="w-full h-56 sm:h-72 object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-4 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+              <div>
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/20 border border-blue-400/50 text-blue-300 text-xs font-bold mb-1.5 inline-block">
+                  ห้องทดลองทักษะแห่งอนาคต (Skill Studio Innovation Labs)
+                </span>
+                <h3 class="text-xl font-bold text-white">บรรยากาศการเรียนรู้เชิงปฏิบัติการ: กระตุ้นคิด ➔ ฝึกปฏิบัติ ➔ Feedback ➔ Reflection</h3>
+              </div>
+              <span class="text-xs text-slate-300 shrink-0">หมุนเวียน 4 Studios และดูงานนอกสถานที่</span>
+            </div>
+          </div>
+
+          <!-- 4 Studios Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+            <!-- STUDIO 1 -->
+            <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 border-l-4 border-l-blue-500 glass-card-hover">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm font-bold">S1</div>
+                  <h3 class="text-base font-bold text-white">Think Forward Lab</h3>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-900/40 text-blue-300 border border-blue-700/40">Critical Thinking & AI</span>
+              </div>
+              <p class="text-xs text-slate-300 mb-3 italic">"คิดอย่างมีวิจารณญาณ ตัดสินใจจากหลักฐาน ใช้ AI อย่างรับผิดชอบ"</p>
+
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Evidence Detective</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">วิเคราะห์ข่าว & เนื้อหา AI แยกข้อเท็จจริง vs ข้อสันนิษฐาน</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>AI & Digital Judgment Challenge</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">ใช้ AI วิเคราะห์ ตรวจสอบอคติ จริยธรรม และความเป็นส่วนตัว</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Creative Problem-Solving</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • 1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">สร้างทางออกหลากหลายภายใต้ข้อจำกัด เลือกแนวทางด้วยหลักฐาน</div>
+                </div>
+                <div class="p-2.5 bg-blue-950/40 border border-blue-500/30 rounded-lg text-blue-300">
+                  <div class="font-semibold flex justify-between">
+                    <span><i class="fa-solid fa-bus text-blue-400"></i> School Tour 1: Future Thinking</span>
+                    <span class="text-[10px] text-blue-400">1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-blue-200/80">ศึกษาดูงานศูนย์ต่อต้านการฉ้อโกงออนไลน์ หรือ AIS</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STUDIO 2 -->
+            <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 border-l-4 border-l-emerald-500 glass-card-hover">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">S2</div>
+                  <h3 class="text-base font-bold text-white">Grow Forward Lab</h3>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40">EQ & Self-Growth</span>
+              </div>
+              <p class="text-xs text-slate-300 mb-3 italic">"นำตนเอง เข้าใจอารมณ์ และพร้อมรับมือความเปลี่ยนแปลง"</p>
+
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Lead Yourself First</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">บริหารเวลา พลังงาน แรงจูงใจ ในสภาวะแวดล้อมที่ผันผวน</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Emotional Intelligence Lab</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">รับรู้อารมณ์ จัดการความกดดัน และตอบสนองต่อข้อขัดแย้ง</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Feedback for Adaptability</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">รับฟังและให้ข้อเสนอแนะโดยไม่ปกป้องตนเองเพื่อพัฒนาผลงาน</div>
+                </div>
+                <div class="p-2.5 bg-emerald-950/40 border border-emerald-500/30 rounded-lg text-emerald-300">
+                  <div class="font-semibold flex justify-between">
+                    <span><i class="fa-solid fa-bus text-emerald-400"></i> School Tour 2: Well-being</span>
+                    <span class="text-[10px] text-emerald-400">1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-emerald-200/80">ดูงานบ้านเชื่อมใจ มูลนิธิเด็กตาบอด หรือศูนย์สุขภาวะจิต ศิริราช</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STUDIO 3 -->
+            <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 border-l-4 border-l-amber-500 glass-card-hover">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">S3</div>
+                  <h3 class="text-base font-bold text-white">Work Forward Lab</h3>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-amber-900/40 text-amber-300 border border-amber-700/40">Teamwork & Influence</span>
+              </div>
+              <p class="text-xs text-slate-300 mb-3 italic">"สื่อสารทรงพลัง ทำงานร่วมกัน และนำทีมสู่ความสำเร็จ"</p>
+
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Communication & Influence</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">อธิบายเรื่องยากใน 3 นาที ฟังเชิงรุก และเล่าเรื่องสร้างพันธมิตร</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Team Simulation & Conflict</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • 1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">แก้ปัญหาในเวลาจำกัด และเจรจาเปลี่ยนความขัดแย้งเป็นพลัง</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Entrepreneurial Mindset</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • 1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">มองหาโอกาส สร้างคุณค่า ออกแบบไอเดียธุรกิจที่ทำได้จริง</div>
+                </div>
+                <div class="p-2.5 bg-amber-950/40 border border-amber-500/30 rounded-lg text-amber-300">
+                  <div class="font-semibold flex justify-between">
+                    <span><i class="fa-solid fa-bus text-amber-400"></i> School Tour 3: Leadership</span>
+                    <span class="text-[10px] text-amber-400">1 วัน</span>
+                  </div>
+                  <div class="text-[11px] text-amber-200/80">เรียนรู้จากผู้นำองค์กร/Influencer เชี่ยวชาญการเจรจาต่อรอง</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STUDIO 4 -->
+            <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 border-l-4 border-l-rose-500 glass-card-hover">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-sm font-bold">S4</div>
+                  <h3 class="text-base font-bold text-white">Live Forward Lab</h3>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-rose-900/40 text-rose-300 border border-rose-700/40">Society & Sustainability</span>
+              </div>
+              <p class="text-xs text-slate-300 mb-3 italic">"จิตสาธารณะ คำนึงถึงความยั่งยืน และเข้าใจผลกระทบโลก"</p>
+
+              <div class="space-y-2 text-xs">
+                <div class="p-2.5 bg-rose-950/40 border border-rose-500/30 rounded-lg text-rose-300">
+                  <div class="font-semibold flex justify-between">
+                    <span><i class="fa-solid fa-bus text-rose-400"></i> School Tour 4: School for Society</span>
+                    <span class="text-[10px] text-rose-400">1 วัน (นอกสถานที่)</span>
+                  </div>
+                  <div class="text-[11px] text-rose-200/80">ลงพื้นที่จริงทำ Empathy Walk & Stakeholder Mapping</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Empathy and Public Mind</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">ถอดบทเรียนจากการลงพื้นที่ เข้าใจความต้องการที่หลากหลาย</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Sustainability Decision Game</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">เกมชั่งน้ำหนักผลกระทบด้านเศรษฐกิจ สังคม และสิ่งแวดล้อม</div>
+                </div>
+                <div class="p-2.5 bg-slate-800/60 rounded-lg">
+                  <div class="font-semibold text-slate-200 flex justify-between">
+                    <span>Global–Local Challenge</span>
+                    <span class="text-[10px] text-slate-400">ที่บ้าน • ครึ่งวัน</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400">เชื่อมโยงประเด็นโลกสู่แนวทางแก้ปัญหาของประเทศไทย</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- INTEGRATED EXPEDITION BANNER -->
+          <div class="bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-950 border border-indigo-500/40 rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <span class="px-2.5 py-0.5 bg-indigo-500/20 text-indigo-300 text-[11px] font-bold rounded-md uppercase tracking-wider">
+                  กิจกรรมบูรณาการ 4 Studios
+                </span>
+                <h3 class="text-lg font-bold text-white">HumanX Learning Expedition & Reflection</h3>
+                <p class="text-xs text-slate-300">
+                  ศึกษาดูงานต่างจังหวัด <strong>2 วัน 1 คืน</strong> เพื่อเรียนรู้จากโรงเรียนหรือชุมชนต้นแบบ ค้นหาโจทย์จริงสำหรับ Social Mission และ Thailand Challenge
+                </p>
+              </div>
+              <div class="shrink-0 flex items-center gap-2">
+                <span class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-semibold shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+                  <i class="fa-solid fa-map-location-dot"></i> ต่างจังหวัด 2 วัน 1 คืน
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 4 ==================== -->
+      <div class="stage-section" data-category="capstone">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-purple-500 glass-card-hover group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl font-bold font-display">
+                4
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Stage 04 • Real Mission Practice</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">House Missions: ฝึกทักษะผ่านภารกิจประจำบ้าน 3 ระดับ</h2>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-xs text-slate-400">คำถามนำใจความ:</div>
+              <div class="text-xs font-semibold text-purple-300">"ใครได้รับประโยชน์ และเรารู้ได้อย่างไรว่าสิ่งที่ทำสร้างคุณค่าจริง"</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- 3 Levels Cards Left -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-slate-900/70 rounded-2xl p-4 border border-slate-800">
+                  <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider block mb-1">Level 1</span>
+                  <h3 class="text-sm font-bold text-white mb-2">Personal Mission</h3>
+                  <ul class="text-[11px] text-slate-300 space-y-1.5">
+                    <li>• สร้างนิสัยใหม่ 14 วัน</li>
+                    <li>• ใช้ AI บันทึกจริยธรรม</li>
+                    <li>• ฝึกฟังไม่ขัดจังหวะ</li>
+                    <li>• รับ Feedback 3 คน</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-900/70 rounded-2xl p-4 border border-slate-800">
+                  <span class="text-[10px] font-bold text-teal-400 uppercase tracking-wider block mb-1">Level 2</span>
+                  <h3 class="text-sm font-bold text-white mb-2">Team Mission</h3>
+                  <ul class="text-[11px] text-slate-300 space-y-1.5">
+                    <li>• แก้ปัญหาใน มศว</li>
+                    <li>• สื่อรณรงค์ข้อมูลจริง</li>
+                    <li>• ธุรกิจเพื่อสังคม</li>
+                    <li>• เวทีเสวนาเห็นต่าง</li>
+                  </ul>
+                </div>
+
+                <div class="bg-slate-900/70 rounded-2xl p-4 border border-slate-800">
+                  <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block mb-1">Level 3</span>
+                  <h3 class="text-sm font-bold text-white mb-2">Social Mission</h3>
+                  <ul class="text-[11px] text-slate-300 space-y-1.5">
+                    <li>• โครงการลดขยะ</li>
+                    <li>• ดิจิทัลช่วยผู้สูงวัย</li>
+                    <li>• สุขภาพใจนิสิต</li>
+                    <li>• พัฒนาเด็กในชุมชน</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="p-3 bg-purple-950/40 border border-purple-500/30 rounded-xl text-xs text-purple-200">
+                <span class="font-bold"><i class="fa-solid fa-seedling text-purple-400"></i> จากห้องเรียนสู่การสร้างผลกระทบ:</span> ภารกิจทั้ง 3 ระดับออกแบบให้นิสิตนำเครื่องมือจาก 4 Studios ไปลงมือปฏิบัติจริงกับผู้คนในรั้วมหาวิทยาลัยและชุมชนรอบข้าง
+              </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl border border-slate-700/80">
+              <img src="images/stage4_missions.jpg" alt="Asian students teaching digital skills to community elderly" class="w-full h-64 sm:h-72 object-cover img-zoom">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-xs">
+                <span class="px-2 py-0.5 rounded bg-purple-500/20 border border-purple-400/40 text-purple-300 text-[10px] font-bold block w-fit mb-1">Social Mission in Action</span>
+                <p class="text-slate-200 text-[11px] font-medium leading-tight">นิสิตจิตอาสาสอนทักษะดิจิทัลแก่ผู้สูงอายุในชุมชนท้องถิ่น</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 5 ==================== -->
+      <div class="stage-section" data-category="capstone">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-brand-coral glass-card-hover group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/40 flex items-center justify-center text-brand-coral text-2xl font-bold font-display">
+                5
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-orange-400">Stage 05 • Capstone Project</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Thailand Challenge: โครงการจริงเพื่ออนาคตประเทศไทย</h2>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3.5 py-1 bg-orange-500/15 text-orange-300 border border-orange-500/40 rounded-full text-xs font-medium">
+                <i class="fa-solid fa-user-tie"></i> Mentors จาก มศว, ภาครัฐ, เอกชน และภาคประชาสังคม
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-6">
+            <!-- Image Left -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl border border-slate-700/80">
+              <img src="images/stage5_thailand_challenge.jpg" alt="Asian students presenting innovation prototype to mentors" class="w-full h-64 sm:h-72 object-cover img-zoom">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-xs">
+                <span class="px-2 py-0.5 rounded bg-orange-500/20 border border-orange-400/40 text-orange-300 text-[10px] font-bold block w-fit mb-1">Capstone Pitching & Prototyping</span>
+                <p class="text-slate-200 text-[11px] font-medium leading-tight">นิสิตนำเสนอต้นแบบนวัตกรรมเพื่อความยั่งยืนต่อคณะกรรมการผู้ทรงคุณวุฒิ</p>
+              </div>
+            </div>
+
+            <!-- Content Right: National Challenges & Process -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="bg-slate-900/70 rounded-2xl p-4 border border-slate-800">
+                <h3 class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">โจทย์ท้าทายระดับชาติ (National Challenges)</h3>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Digital Divide</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Aging Society</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Youth Mental Health</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Education Gap</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Climate & Circular</span>
+                  <span class="text-[11px] px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Responsible AI</span>
+                </div>
+              </div>
+
+              <!-- 8 Steps Flow -->
+              <div class="bg-slate-900/50 rounded-2xl p-4 border border-slate-800">
+                <h4 class="text-xs font-bold text-slate-200 mb-2.5 flex items-center gap-2">
+                  <i class="fa-solid fa-arrows-spin text-orange-400"></i> กระบวนการพัฒนานวัตกรรม 8 ขั้นตอน
+                </h4>
+                <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">1. Explore</span><span class="text-[9px] text-slate-400">สำรวจปัญหา</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">2. Empathize</span><span class="text-[9px] text-slate-400">เข้าใจผู้คน</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">3. Define</span><span class="text-[9px] text-slate-400">กำหนดโจทย์</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">4. Ideate</span><span class="text-[9px] text-slate-400">ระดมไอเดีย</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">5. Prototype</span><span class="text-[9px] text-slate-400">สร้างต้นแบบ</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">6. Test</span><span class="text-[9px] text-slate-400">ทดสอบจริง</span></div>
+                  <div class="p-2 bg-slate-800 rounded-lg"><span class="font-bold text-orange-400 block text-[10px]">7. Improve</span><span class="text-[9px] text-slate-400">ปรับปรุงผล</span></div>
+                  <div class="p-2 bg-gradient-to-br from-orange-600 to-amber-600 rounded-lg text-white"><span class="font-bold block text-[10px]">8. Impact</span><span class="text-[9px] text-white/90">ขยายผลจริง</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STAGE 6 ==================== -->
+      <div class="stage-section" data-category="capstone">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border-t-4 border-emerald-400 glass-card-hover group">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-700/60 mb-6">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl font-bold font-display">
+                6
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Stage 06 • Graduation & Legacy</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">HumanX Showcase & Homecoming</h2>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3.5 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 rounded-full text-xs font-medium">
+                <i class="fa-solid fa-award"></i> พิธีมอบเกียรติบัตรและส่งมอบคุณค่าคืนสู่สังคม
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Content Left -->
+            <div class="lg:col-span-7 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm mb-2">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">Showcase Day & Pitching</h3>
+                  <p class="text-[11px] text-slate-400">นิทรรศการผลงานและการนำเสนอต่อกรรมการและผู้ใช้จริง</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center text-sm mb-2">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">Growth Story & Feedback</h3>
+                  <p class="text-[11px] text-slate-400">เล่าการเติบโตของตนเอง พร้อมรับฟังการสะท้อนจากโค้ช</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-sm mb-2">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">Competency Badge & Passport</h3>
+                  <p class="text-[11px] text-slate-400">มอบ HumanX Passport และเหรียญตราสมรรถนะรับรองทักษะ</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div class="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center text-sm mb-2">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">Pay It Forward Commitment</h3>
+                  <p class="text-[11px] text-slate-400">พันธสัญญาส่งต่อสิ่งดีๆ สู่นิสิตรุ่นต่อไปในเครือข่ายศิษย์เก่า</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-xl border border-slate-700/80">
+              <img src="images/stage6_showcase.jpg" alt="พิธีมอบเกียรติบัตรและเหรียญตราสมรรถนะ HumanX Academy" class="w-full h-64 sm:h-72 object-cover img-zoom">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-xs">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[10px] font-bold block w-fit mb-1">พิธีมอบเกียรติบัตร & Competency Badges</span>
+                <p class="text-slate-200 text-[11px] font-medium leading-tight">พิธีมอบเกียรติบัตรรับรองสมรรถนะสู่อนาคต และความภาคภูมิใจในการเป็นผู้นำการเปลี่ยนแปลง</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Summary Matrix Table -->
+    <div class="mt-14 glass-card rounded-3xl p-6 sm:p-8 overflow-hidden">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-display">สรุปภาพรวมโครงสร้างหลักสูตร (Curriculum Summary Matrix)</h2>
+          <p class="text-xs text-slate-400 mt-1">เปรียบเทียบระยะเวลา สถานที่จัด และผลผลิตสำคัญในแต่ละช่วงการเรียนรู้</p>
+        </div>
+        <span class="text-xs bg-slate-800 px-3 py-1 rounded-lg text-slate-300 border border-slate-700">Official Blueprint</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs text-slate-300 border-collapse">
+          <thead>
+            <tr class="border-b border-slate-700 bg-slate-900/60 text-slate-200">
+              <th class="p-3 font-semibold">Stage</th>
+              <th class="p-3 font-semibold">ชื่อช่วงการเติบโต</th>
+              <th class="p-3 font-semibold">รูปแบบ & สถานที่</th>
+              <th class="p-3 font-semibold">ระยะเวลา</th>
+              <th class="p-3 font-semibold">แกนทักษะหลัก</th>
+              <th class="p-3 font-semibold">ผลผลิตสำคัญ (Key Deliverables)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="p-3 font-bold text-amber-400">Stage 1</td>
+              <td class="p-3 font-medium text-white">Welcome Home</td>
+              <td class="p-3">นอกสถานที่ ณ ศาลานา</td>
+              <td class="p-3">2 วัน 1 คืน</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-900/40 text-blue-300">Foundation</span></td>
+              <td class="p-3">สมุด HumanX Growth Passport, Team Charter, My Future Self</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-teal-400">Stage 2</td>
+              <td class="p-3 font-medium text-white">Discover Yourself</td>
+              <td class="p-3">กิจกรรมที่บ้าน (In-House)</td>
+              <td class="p-3">2 วัน (0.5+1.5)</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-900/40 text-emerald-300">Grow Forward</span></td>
+              <td class="p-3">วิดีโอ 3 นาที Baseline Pitching, แผนภารกิจ Personal Mission</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-blue-400">Stage 3</td>
+              <td class="p-3 font-medium text-white">Build the Foundations</td>
+              <td class="p-3">ที่บ้าน + 4 School Tours + ต่างจังหวัด</td>
+              <td class="p-3">หลายสัปดาห์ (Camp 2D1N)</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/40 text-amber-300">4 Skill Studios</span></td>
+              <td class="p-3">STAMP สะสมทักษะ, Empathy Map, Stakeholder & Problem Brief</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-purple-400">Stage 4</td>
+              <td class="p-3 font-medium text-white">House Missions</td>
+              <td class="p-3">มหาวิทยาลัย มศว และชุมชนโดยรอบ</td>
+              <td class="p-3">ภารกิจ 3 ระดับ</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/40 text-purple-300">Work & Live</span></td>
+              <td class="p-3">Social Venture Concept, กิจกรรมแก้ปัญหาจริงใน มศว</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-orange-400">Stage 5</td>
+              <td class="p-3 font-medium text-white">Thailand Challenge</td>
+              <td class="p-3">ลงพื้นที่จริง & มี Mentor ดูแล</td>
+              <td class="p-3">Capstone Period</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-rose-900/40 text-rose-300">National Impact</span></td>
+              <td class="p-3">Prototype & Tested Solutions เพื่อโจทย์ท้าทายระดับชาติ</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-emerald-400">Stage 6</td>
+              <td class="p-3 font-medium text-white">Showcase & Homecoming</td>
+              <td class="p-3">หอประชุม มศว</td>
+              <td class="p-3">วันปิดโครงการ</td>
+              <td class="p-3"><span class="px-2 py-0.5 rounded bg-teal-900/40 text-teal-300">Showcase</span></td>
+              <td class="p-3">HumanX Badge Award, Growth Story Video, Pay It Forward</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Navigation Cross-Page Footer -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="index.html" class="glass-card rounded-2xl p-6 flex items-center justify-between hover:border-amber-400/40 transition group">
+        <div class="space-y-1">
+          <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider">Page 1</div>
+          <div class="text-base font-bold text-white group-hover:text-amber-300 transition">What is HumanX Academy?</div>
+          <div class="text-xs text-slate-400 font-light">อ่านแนวคิด ที่มา วิสัยทัศน์ และ 5 เสาหลักของโครงการ</div>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-slate-400 flex items-center justify-center transition shrink-0 ml-4">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      </a>
+
+      <a href="schedule.html" class="glass-card rounded-2xl p-6 flex items-center justify-between hover:border-amber-400/40 transition group">
+        <div class="space-y-1">
+          <div class="text-xs text-amber-400 font-semibold uppercase tracking-wider">Page 3</div>
+          <div class="text-base font-bold text-white group-hover:text-amber-300 transition">Program Schedule (Graphic)</div>
+          <div class="text-xs text-slate-400 font-light">ดูกำหนดการ วันที่ สถานที่จัด และ Roadmap ตลอดปีการศึกษา</div>
+        </div>
+        <div class="w-10 h-10 rounded-xl bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-slate-400 flex items-center justify-center transition shrink-0 ml-4">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-xs text-slate-500 pb-12">
+      <div class="flex justify-center items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+      </div>
+      <p class="font-medium text-slate-400">HumanX Academy (สถาบันพัฒนาคนแห่งอนาคตประเทศไทย)</p>
+      <p class="mt-1 text-[11px] text-slate-600">ความร่วมมือระหว่าง มหาวิทยาลัยศรีนครินทรวิโรฒ และ มูลนิธิสุทธิรัตน์ อยู่วิทยา</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleFilters(category) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+        b.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      const activeBtn = document.getElementById('btn-' + category);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+        activeBtn.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+      }
+
+      const sections = document.querySelectorAll('.stage-section');
+      sections.forEach(sec => {
+        if (category === 'all') {
+          sec.style.display = 'block';
+        } else if (category === 'foundation') {
+          sec.style.display = sec.getAttribute('data-category') === 'foundation' ? 'block' : 'none';
+        } else if (category === 'capstone') {
+          sec.style.display = sec.getAttribute('data-category') === 'capstone' ? 'block' : 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

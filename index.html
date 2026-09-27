@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is HumanX Academy? - สถาบันพัฒนาคนแห่งอนาคตประเทศไทย</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              navy: '#0b192c',
+              slate: '#1e3e62',
+              primary: '#0052cc',
+              coral: '#ff6500',
+              gold: '#f59e0b',
+              emerald: '#059669',
+              teal: '#0d9488',
+              crimson: '#e11d48',
+              dark: '#070f1a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #0d1b2a 0%, #070f1a 100%);
+      color: #e2e8f0;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6), 0 0 25px 2px rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+    .asian-tag {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(225, 29, 72, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .img-zoom {
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 selection:bg-brand-coral selection:text-white">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <nav class="max-w-7xl mx-auto mb-8 glass-card rounded-2xl px-5 py-3.5 border border-slate-700/60 shadow-xl sticky top-4 z-50">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+            HX
+          </div>
+          <div>
+            <div class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+              Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">X</span> Academy
+            </div>
+            <div class="text-[11px] text-slate-400">มศว × มูลนิธิสุทธิรัตน์ อยู่วิทยา</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Interconnected Links -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="index.html" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs shadow-md shadow-amber-500/20 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-house-chimney text-xs"></i>
+          <span>What is HumanX?</span>
+        </a>
+        <a href="journey.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-route text-xs"></i>
+          <span>Learning Journey</span>
+        </a>
+        <a href="schedule.html" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-calendar-days text-xs"></i>
+          <span>Schedule</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto space-y-12">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="relative rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden border border-slate-700/60 bg-gradient-to-br from-slate-900 via-[#0e1d32] to-[#081324] shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 -bottom-20 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full asian-tag text-amber-300 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            สถาบันพัฒนาคนแห่งอนาคตประเทศไทย
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white leading-tight">
+            Human<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400">X</span> Academy
+          </h1>
+          <p class="text-lg sm:text-2xl font-semibold text-amber-300 leading-snug">
+            "บ้านที่บ่มเพาะคนรุ่นใหม่ให้พร้อมสำหรับโลกที่เปลี่ยนเร็ว เรียนรู้ผ่านโจทย์จริงของประเทศไทย และส่งต่อคุณค่ากลับสู่สังคม"
+          </p>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+            มีเป้าหมายพัฒนาคนไทยให้มีทักษะแห่งอนาคตและทักษะด้านสังคมและอารมณ์ <strong>(Future Skills & Soft Skills)</strong> อย่างเป็นระบบ วัดผลได้ และนำไปใช้ได้จริง เพื่อสร้างคนรุ่นใหม่ที่ <span class="text-amber-400 font-medium">คิดเป็น</span>, <span class="text-emerald-400 font-medium">เติบโตเป็น</span>, <span class="text-blue-400 font-medium">ทำงานกับผู้อื่นได้</span> และ <span class="text-rose-400 font-medium">ใช้ความสามารถสร้างประโยชน์แก่สังคม</span>
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="journey.html" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/25 flex items-center gap-2 transition transform hover:-translate-y-0.5">
+              <span>สำรวจเส้นทางการเรียนรู้ (6 Stages)</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="schedule.html" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs sm:text-sm border border-slate-700 flex items-center gap-2 transition">
+              <i class="fa-solid fa-calendar-check text-amber-400"></i>
+              <span>ดูกำหนดการหลักสูตร (Schedule)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Asian Photo -->
+        <div class="lg:col-span-5 relative group">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30">
+            <img src="images/what_is_humanx.jpg" alt="Asian students in HumanX House collaborative discussion" class="w-full h-80 sm:h-96 object-cover img-zoom">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-xs">
+              <span class="px-2.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[10px] font-bold block w-fit mb-1">
+                HumanX House: พื้นที่ปลอดภัยแห่งการเติบโต
+              </span>
+              <p class="text-slate-200 text-[11px] leading-tight font-medium">
+                นิสิตต่างคณะร่วมแลกเปลี่ยนความคิด ลองผิดลองถูก และร่วมแก้ปัญหาจริงของสังคม
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== 4 CORE OUTCOMES ==================== -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass-card p-5 rounded-2xl border-t-4 border-amber-400 glass-card-hover">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <h3 class="text-base font-bold text-white mb-1">คิดเป็น (Think)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light">
+          คิดวิเคราะห์อย่างมีวิจารณญาณ ตัดสินใจบนหลักฐานจริง และใช้เทคโนโลยี AI อย่างรอบคอบและมีจริยธรรม
+        </p>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-4 border-emerald-400 glass-card-hover">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h3 class="text-base font-bold text-white mb-1">เติบโตเป็น (Grow)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light">
+          เข้าใจอารมณ์ตนเอง มีความยืดหยุ่นทางใจ (Resilience) พร้อมปรับตัวต่อความเปลี่ยนแปลง และรับฟังข้อเสนอแนะ
+        </p>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-4 border-blue-400 glass-card-hover">
+        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3 class="text-base font-bold text-white mb-1">ทำงานกับผู้อื่นได้ (Work)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light">
+          สื่อสารอย่างทรงพลัง สร้างความร่วมมือ นำทีมภายใต้เวลาจำกัด และเจรจาเปลี่ยนความขัดแย้งเป็นพลัง
+        </p>
+      </div>
+
+      <div class="glass-card p-5 rounded-2xl border-t-4 border-rose-400 glass-card-hover">
+        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+        <h3 class="text-base font-bold text-white mb-1">สร้างประโยชน์สังคม (Live)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light">
+          มีจิตสาธารณะ เข้าใจผู้มีส่วนได้ส่วนเสีย คำนึงถึงความยั่งยืน และนำความรู้ไปแก้ปัญหาจริงของประเทศไทย
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== WHY THAILAND NEEDS HUMANX ==================== -->
+    <section class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-700/60 space-y-8">
+      <div class="border-b border-slate-700/80 pb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">The Need for Transformation</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">ทำไมประเทศไทยต้องมี HumanX Academy</h2>
+      </div>
+
+      <!-- Point 1 -->
+      <div class="bg-slate-900/70 p-6 rounded-2xl border border-slate-800 flex flex-col md:flex-row gap-6 items-start">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold shrink-0">
+          1
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-lg font-bold text-white">ทักษะที่โลกต้องการเปลี่ยนเร็วกว่าที่ระบบการศึกษาปรับตัวทัน</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            ทักษะที่ตลาดงานและสังคมต้องการเพิ่มขึ้นเร็วที่สุด ไม่ได้มีแค่ AI และเทคโนโลยี แต่ยังรวมถึง <strong>การคิดวิเคราะห์ ความยืดหยุ่นทางใจ (Resilience) ภาวะผู้นำ และการทำงานร่วมกับผู้อื่น</strong> ทักษะเหล่านี้สอนด้วยการบรรยายไม่ได้ ต้องฝึกผ่านประสบการณ์จริงอย่างต่อเนื่อง
+          </p>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-light">
+            แต่ในระบบการศึกษาปัจจุบัน ทักษะกลุ่มนี้ยังเป็นเพียง <span class="italic text-amber-300 font-normal">"ผลพลอยได้"</span> จากการเรียนวิชาและกิจกรรมนิสิต ยังไม่ได้เป็นเป้าหมายที่ออกแบบ ฝึก และวัดผลอย่างจริงจัง <strong>HumanX Academy จึงเกิดขึ้นเพื่อเติมช่องว่างนี้</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Point 2 & Comparison Table -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-2xl font-bold shrink-0">
+            2
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">HumanX แตกต่างจากระบบการศึกษาปกติและการอบรมทั่วไป</h3>
+            <p class="text-xs text-slate-400 font-light">
+              ไม่ได้เป็นรายวิชา และไม่ได้เป็นการอบรมครั้งเดียวจบ แต่เป็น <strong>บ้านแห่งการเติบโต</strong> ที่นิสิตต่างคณะมาอยู่ร่วมกัน ฝึกทักษะผ่านโจทย์จริง และพิสูจน์การเติบโตของตนเองด้วยหลักฐาน
+            </p>
+          </div>
+        </div>
+
+        <!-- 3-Way Comparison Table (Desktop & Mobile Responsive) -->
+        <div class="overflow-x-auto pt-2">
+          <table class="w-full text-left text-xs text-slate-300 border-collapse">
+            <thead>
+              <tr class="border-b border-slate-700 bg-slate-900/90 text-slate-200">
+                <th class="p-3.5 font-bold text-slate-400 w-28">มิติเปรียบเทียบ</th>
+                <th class="p-3.5 font-semibold text-slate-300 w-1/4 bg-slate-950/40">ระบบการศึกษาปกติ</th>
+                <th class="p-3.5 font-semibold text-slate-300 w-1/4 bg-slate-950/40">การอบรมทั่วไป</th>
+                <th class="p-3.5 font-bold text-amber-300 bg-amber-500/15 border-l border-r border-amber-500/30">HumanX Academy ✨</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/80">
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">เป้าหมาย</td>
+                <td class="p-3.5 text-slate-300">ความรู้ตามศาสตร์และเกรด</td>
+                <td class="p-3.5 text-slate-300">ความรู้หรือแรงบันดาลใจเฉพาะเรื่อง</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">การเติบโตของ "คน" ครบ 12 ทักษะ ทั้งคิด เติบโต ทำงาน และใช้ชีวิตเพื่อสังคม</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">ระยะเวลา</td>
+                <td class="p-3.5 text-slate-300">ตามภาคเรียน แยกเป็นรายวิชา</td>
+                <td class="p-3.5 text-slate-300">1–3 วันแล้วจบ</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">เส้นทางต่อเนื่อง 6 Stages ต่อด้วยเครือข่ายศิษย์เก่า</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">ผู้เรียน</td>
+                <td class="p-3.5 text-slate-300">เรียนกับเพื่อนในคณะเดียวกัน</td>
+                <td class="p-3.5 text-slate-300">ต่างคนต่างมา แล้วแยกย้าย</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">"บ้าน" ทีมคละคณะ ชั้นปี และความถนัด อยู่ด้วยกันตลอดเส้นทาง</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">วิธีเรียน</td>
+                <td class="p-3.5 text-slate-300">บรรยายและโจทย์ในห้องเรียน</td>
+                <td class="p-3.5 text-slate-300">ฟังวิทยากรและทำ Workshop</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">ลงมือทำภารกิจจริง ลงพื้นที่ ทดลองกับผู้ใช้จริง แล้วสะท้อนคิด</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">โจทย์</td>
+                <td class="p-3.5 text-slate-300">กรณีสมมติหรือแบบฝึกหัด</td>
+                <td class="p-3.5 text-slate-300">ตัวอย่างทั่วไป</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">ปัญหาจริงของมหาวิทยาลัย ชุมชน และอนาคตประเทศไทย</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">การวัดผล</td>
+                <td class="p-3.5 text-slate-300">สอบและให้เกรด</td>
+                <td class="p-3.5 text-slate-300">แบบประเมินความพึงพอใจ</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">วัดพัฒนาการก่อนและหลัง มีหลักฐานการเติบโต และได้รับ Competency Badge</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">สิ่งที่ได้</td>
+                <td class="p-3.5 text-slate-300">ใบแสดงผลการเรียน</td>
+                <td class="p-3.5 text-slate-300">ใบประกาศการเข้าร่วม</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">ต้นแบบที่ใช้ได้จริง Growth Story ของตนเอง และเครือข่ายตลอดชีวิต</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-slate-400">หลังจบ</td>
+                <td class="p-3.5 text-slate-300">สำเร็จการศึกษา</td>
+                <td class="p-3.5 text-slate-300">จบกิจกรรม</td>
+                <td class="p-3.5 font-medium text-white bg-amber-500/5 border-l border-r border-amber-500/20">Pay It Forward กลับมาเป็นพี่เลี้ยงและส่งต่อคุณค่าให้รุ่นถัดไป</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5 DISTINCTIVE HIGHLIGHTS ==================== -->
+    <section class="space-y-6">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="px-3.5 py-1 rounded-full asian-tag text-amber-300 text-xs font-semibold">
+          Unique Value Propositions
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">จุดเด่นที่ทำให้ HumanX ไม่เหมือนที่ใด</h2>
+        <p class="text-xs sm:text-sm text-slate-400 font-light">
+          5 เสาหลักที่หล่อหลอมประสบการณ์การเรียนรู้ระดับพรีเมียม เพื่อการพัฒนาศักยภาพมนุษย์อย่างแท้จริง
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+        <!-- Pillar 1 -->
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-amber-500 glass-card-hover space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">เรียนแบบ "บ้าน" ไม่ใช่ "ห้องเรียน"</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            เป็นพื้นที่ปลอดภัยที่ลองผิดลองถูกได้ มีทีมที่เติบโตไปด้วยกัน และมีความผูกพันต่อเนื่องหลังจบหลักสูตร
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-emerald-500 glass-card-hover space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">ทักษะเกิดจากภารกิจจริง</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            เริ่มจากภารกิจเล็กในมหาวิทยาลัย ขยายไปสู่ชุมชน จนถึงโจทย์ระดับประเทศ ทักษะจึงถูกใช้จริง ไม่ได้จบแค่ในห้อง
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-blue-500 glass-card-hover space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-passport"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">พิสูจน์การเติบโตด้วยหลักฐาน</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            ผู้เรียนมีสมุด Growth Journey และ STAMP ทักษะ ทุกคนจึงเห็นพัฒนาการของตนเองได้ชัดเจน พร้อมวิดีโอเทียบก่อน-หลัง
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-teal-500 glass-card-hover space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">เชื่อมมหาวิทยาลัยกับโลกจริง</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            ความร่วมมือระหว่าง มศว มูลนิธิสุทธิรัตน์ อยู่วิทยา และภาคีจากทุกภาคส่วน ทำให้การเรียนรู้เชื่อมกับความต้องการของสังคมโดยตรง
+          </p>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-l-rose-500 glass-card-hover space-y-3 md:col-span-2 lg:col-span-2">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">สร้างคุณค่าย้อนกลับสู่สังคม (Pay It Forward)</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+            ผลลัพธ์ไม่ได้มีแค่ผู้เรียนที่เก่งขึ้น แต่ยังได้ผลงานต้นแบบที่แก้ปัญหาจริง และได้เครือข่ายศิษย์เก่าที่กลับมาเป็นพี่เลี้ยงเพื่อพัฒนานิสิตรุ่นต่อไปอย่างยั่งยืน
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEXT STEP CTA BANNER ==================== -->
+    <section class="glass-card rounded-3xl p-8 sm:p-10 border border-slate-700/80 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <h3 class="text-2xl font-bold text-white">พร้อมเริ่มต้นการเดินทางแห่งการเรียนรู้หรือยัง?</h3>
+          <p class="text-xs sm:text-sm text-slate-300 font-light">
+            เรียนรู้รายละเอียดกระบวนการ 6 Stages หรือตรวจสอบตารางกำหนดการการทำกิจกรรมตลอดปีการศึกษา
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <a href="journey.html" class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/20 flex items-center gap-2 transition">
+            <i class="fa-solid fa-route"></i>
+            <span>Learning Journey</span>
+          </a>
+          <a href="schedule.html" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs sm:text-sm border border-slate-600 flex items-center gap-2 transition">
+            <i class="fa-solid fa-calendar-days text-amber-400"></i>
+            <span>Schedule</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="text-center text-xs text-slate-500 pt-6 pb-12 border-t border-slate-800/80">
+      <div class="flex justify-center items-center gap-3 mb-3">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+      </div>
+      <p class="font-medium text-slate-400">HumanX Academy (สถาบันพัฒนาคนแห่งอนาคตประเทศไทย)</p>
+      <p class="mt-1 text-[11px] text-slate-600">ความร่วมมือระหว่าง มหาวิทยาลัยศรีนครินทรวิโรฒ และ มูลนิธิสุทธิรัตน์ อยู่วิทยา</p>
+    </footer>
+
+  </div>
+</body>
+</html>
